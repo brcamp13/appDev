@@ -9,22 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, MyTimerDelegate {
-    func timesUp() {
-        print("Times up")
-    }
-    
-    func timeChanged(time: Int) {
-        print("Time changed")
-    }
-    
-    
     var count: Int = 1
     var ordinalFoods:[Int:String] = [1: "Pasta!", 2: "Sushi!", 3: "Chicken!"]
-    var myTimer: MyTimer?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var initialTimeLabel: UILabel!
+    @IBOutlet weak var initialTimeSlider: UISlider!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     @IBAction func nextButtonTapped(_sender: Any) {
         count += 1
@@ -36,7 +30,33 @@ class ViewController: UIViewController, MyTimerDelegate {
         topLabel.text = "My #" + String(count) + " favorite food is..."
         foodLabel.text = ordinalFoods[count]!
     }
-
+    
+    @IBAction func initialTimeSliderValueChanged(_ sender: UISlider) {
+        let initTime = Int(sender.value)
+        initialTimeLabel.text = "Delay: \(initTime)s"
+        myTimer?.setInitialTime(initTime)
+    }
+    
+    @IBAction func startTapped(_ sender: UIButton) {
+        startButton.isEnabled = false
+        stopButton.isEnabled = true
+        myTimer?.start()
+    }
+    
+    @IBAction func stopTapped(_ sender: UIButton) {
+        // TODO
+    }
+    
+    func timeChanged(time: Int) {
+        print("Time changed")
+    }
+    
+    func timesUp() {
+        print("Time's up")
+    }
+    
+    var myTimer: MyTimer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +65,7 @@ class ViewController: UIViewController, MyTimerDelegate {
         imageView.image = UIImage(named: "1.jpg")
         foodLabel.text = "Pasta!"
         myTimer = MyTimer()
+        myTimer?.delegate = self
     }
     
     

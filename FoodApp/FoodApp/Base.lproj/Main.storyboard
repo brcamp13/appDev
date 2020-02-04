@@ -50,8 +50,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-cH-i39">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-cH-i39">
                                 <rect key="frame" x="191" y="460.5" width="170" height="31"/>
+                                <connections>
+                                    <action selector="initialTimeSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yu8-wD-wH9"/>
+                                </connections>
                             </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YWF-5O-4zJ">
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
@@ -59,10 +62,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-aI-N56">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S0Z-C9-Ufa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SN-Cb-hSp">
                                         <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
                                         <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fgq-x1-YVH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -94,6 +103,10 @@
                     <connections>
                         <outlet property="foodLabel" destination="OYn-GQ-Ua0" id="K0W-Y5-NWB"/>
                         <outlet property="imageView" destination="7TS-Xj-NxO" id="B7w-2P-e0g"/>
+                        <outlet property="initialTimeLabel" destination="rFs-4z-bD3" id="oA2-gs-mYh"/>
+                        <outlet property="initialTimeSlider" destination="vIA-cH-i39" id="4w4-95-3OJ"/>
+                        <outlet property="startButton" destination="zzd-aI-N56" id="1AN-DD-HkZ"/>
+                        <outlet property="stopButton" destination="7SN-Cb-hSp" id="k8Y-kx-c8Q"/>
                         <outlet property="topLabel" destination="oiz-ij-aPJ" id="1fv-Wi-oxn"/>
                     </connections>
                 </viewController>

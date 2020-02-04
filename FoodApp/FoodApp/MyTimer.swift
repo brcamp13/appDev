@@ -15,8 +15,8 @@ protocol MyTimerDelegate {
 
 class MyTimer {
     var delegate: MyTimerDelegate?
-    var initialTime: Int = 10
-    var currentTime: Int = 10
+    var initialTime: Int = 5
+    var currentTime: Int = 5
     var timer: Timer?
     
     func setInitialTime(_ initTime: Int) {
@@ -28,10 +28,26 @@ class MyTimer {
     }
     
     func handleTick (timer: Timer) {
-        delegate?.timeChanged(time: currentTime)
+        if currentTime > 0 {
+            
+            currentTime = currentTime - 1
+            delegate?.timeChanged(time: currentTime)
+            
+            if currentTime == 0 {
+                delegate?.timesUp()
+            }
+            
+        }
     }
     
     func stop() {
         timer?.invalidate()
+    }
+    
+    func reset() {
+        if currentTime != initialTime {
+            currentTime = initialTime
+            delegate?.timeChanged(time: currentTime)
+        }
     }
 }
