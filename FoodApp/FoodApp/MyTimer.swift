@@ -10,22 +10,28 @@ import Foundation
 
 protocol MyTimerDelegate {
     func timeChanged (time: Int)
+    func timesUp ()
 }
 
 class MyTimer {
     var delegate: MyTimerDelegate?
-    var initialTime: Int = 60
+    var initialTime: Int = 10
+    var currentTime: Int = 10
+    var timer: Timer?
     
     func setInitialTime(_ initTime: Int) {
         initialTime = initTime
     }
     
     func start() {
-        // TODO
-        // LEFT OFF AT 24:46 OF JAN 31 LECTURE VIDEO
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: handleTick)
+    }
+    
+    func handleTick (timer: Timer) {
+        delegate?.timeChanged(time: currentTime)
     }
     
     func stop() {
-        // TODO
+        timer?.invalidate()
     }
 }

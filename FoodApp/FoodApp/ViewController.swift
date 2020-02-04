@@ -8,10 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MyTimerDelegate {
+    func timesUp() {
+        print("Times up")
+    }
+    
+    func timeChanged(time: Int) {
+        print("Time changed")
+    }
+    
     
     var count: Int = 1
     var ordinalFoods:[Int:String] = [1: "Pasta!", 2: "Sushi!", 3: "Chicken!"]
+    var myTimer: MyTimer?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
@@ -30,10 +39,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         count = 1
         topLabel.text = "My #1 favorite food is..."
         imageView.image = UIImage(named: "1.jpg")
         foodLabel.text = "Pasta!"
+        myTimer = MyTimer()
     }
     
     
