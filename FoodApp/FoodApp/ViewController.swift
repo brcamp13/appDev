@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, MyTimerDelegate {
     var count: Int = 1
     var ordinalFoods:[Int:String] = [1: "Pasta!", 2: "Sushi!", 3: "Chicken!"]
+    var initialTime = 5
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
@@ -44,7 +45,9 @@ class ViewController: UIViewController, MyTimerDelegate {
     }
     
     @IBAction func stopTapped(_ sender: UIButton) {
-        // TODO
+        startButton.isEnabled = true
+        stopButton.isEnabled = false
+        myTimer?.stop()
     }
     
     func timeChanged(time: Int) {
@@ -52,7 +55,16 @@ class ViewController: UIViewController, MyTimerDelegate {
     }
     
     func timesUp() {
-        print("Time's up")
+        count += 1
+        if count > 3 {
+            count = 1
+        }
+        
+        imageView.image = UIImage(named: String(count) + ".jpg")
+        topLabel.text = "My #" + String(count) + " favorite food is..."
+        foodLabel.text = ordinalFoods[count]!
+        
+        myTimer?.reset()
     }
     
     var myTimer: MyTimer?
@@ -66,6 +78,10 @@ class ViewController: UIViewController, MyTimerDelegate {
         foodLabel.text = "Pasta!"
         myTimer = MyTimer()
         myTimer?.delegate = self
+        myTimer?.setInitialTime(initialTime)
+        initialTimeLabel.text = "Delay: \(initialTime)s"
+        startButton.isEnabled = true
+        stopButton.isEnabled = false
     }
     
     
