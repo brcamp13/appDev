@@ -50,6 +50,14 @@ class ViewController: UIViewController, MyTimerDelegate {
         myTimer?.stop()
     }
     
+    @IBAction func unwindFromAddFoodView (sender: UIStoryboardSegue) {
+        let addFoodVC = sender.source as! AddFoodViewController
+        // if let secondViewText = secondVC.secondViewText {
+        // print("Second View Text: \(secondViewText)")
+        // }
+        
+    }
+    
     func timeChanged(time: Int) {
         print("Time changed")
     }
@@ -65,6 +73,13 @@ class ViewController: UIViewController, MyTimerDelegate {
         foodLabel.text = ordinalFoods[count]!
         
         myTimer?.reset()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addFromView1") {
+            let addFoodVC = segue.destination as! AddFoodViewController
+            // secondVC.messageFromFirstView = messageTextField.text
+        }
     }
     
     var myTimer: MyTimer?
@@ -83,16 +98,4 @@ class ViewController: UIViewController, MyTimerDelegate {
         startButton.isEnabled = true
         stopButton.isEnabled = false
     }
-    
-    
-    // Put an IBAction function header in here that detects when the button is pressed
-    // IBAction function will get rid of current image, show next image in sequence
-    // This can be accomplished by having a count variable and then naming each image 1, 2, 3, etc and just displaying image("count")
-    // Shouldn't be too bad. A bit hacky, but not too bad
-    // Also have to put my #1, #2 favorite food which can be accomplished by, again, using a count variable
-    // When it hits the last food, set count back to 1
-    // Have to change the label name of the food too, so perhaps create some sort of mapping data structure that maps food num to food title. That should work. 
-
-
 }
-
