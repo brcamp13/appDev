@@ -11,9 +11,27 @@ import UIKit
 class AddFoodViewController: UIViewController {
 
     var messageFromFirstView: String?
+    var addFoodViewData: String? = "none"
+    var buttonTapped: String = "none"
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        buttonTapped = "cancel"
+        performSegue(withIdentifier: "View2ToView1", sender: nil)
+    }
+    
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        addFoodViewData = textField.text
+        buttonTapped = "save"
+        performSegue(withIdentifier: "View2ToView1", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        messageLabel.text = messageFromFirstView
 
         // Do any additional setup after loading the view.
     }

@@ -34,59 +34,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay: 10s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFs-4z-bD3">
-                                <rect key="frame" x="72" y="465" width="79" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="xYt-eE-L8T"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-cH-i39">
-                                <rect key="frame" x="191" y="460.5" width="170" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-VL-qbz">
+                                <rect key="frame" x="171.5" y="429" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="initialTimeSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bi5-WP-3A0"/>
+                                    <action selector="nextButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sbj-xS-VG3"/>
                                 </connections>
-                            </slider>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YWF-5O-4zJ">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-aI-N56">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Start"/>
-                                        <connections>
-                                            <action selector="startTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45u-Fn-5hV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SN-Cb-hSp">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="stopTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmV-AW-akb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rFs-4z-bD3" secondAttribute="trailing" constant="224" id="4du-uh-l4F"/>
-                            <constraint firstItem="vIA-cH-i39" firstAttribute="leading" secondItem="rFs-4z-bD3" secondAttribute="trailing" constant="42" id="4gC-2T-ogG"/>
                             <constraint firstItem="OYn-GQ-Ua0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ZD-CV-EVg"/>
                             <constraint firstItem="7TS-Xj-NxO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Iz-8v-aG5"/>
                             <constraint firstItem="oiz-ij-aPJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-159" id="Bir-ww-dYn"/>
-                            <constraint firstItem="vIA-cH-i39" firstAttribute="centerY" secondItem="rFs-4z-bD3" secondAttribute="centerY" id="D4J-Am-vln"/>
                             <constraint firstItem="7TS-Xj-NxO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EDw-xz-fee"/>
                             <constraint firstItem="OYn-GQ-Ua0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="61" id="G8D-yk-qJf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWF-5O-4zJ" secondAttribute="trailing" constant="16" id="ZgD-jk-yCl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vIA-cH-i39" secondAttribute="trailing" constant="16" id="bVy-0A-vSe"/>
                             <constraint firstItem="oiz-ij-aPJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cTq-Vu-TOm"/>
-                            <constraint firstItem="YWF-5O-4zJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d4p-XL-9qd"/>
-                            <constraint firstItem="vIA-cH-i39" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rFs-4z-bD3" secondAttribute="trailing" constant="42" id="htA-Of-Xrk"/>
-                            <constraint firstItem="rFs-4z-bD3" firstAttribute="top" secondItem="7TS-Xj-NxO" secondAttribute="bottom" constant="81.5" id="oNy-dp-us0"/>
-                            <constraint firstItem="rFs-4z-bD3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="x0g-0w-yog"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YWF-5O-4zJ" secondAttribute="bottom" constant="20" id="xZA-78-YFc"/>
+                            <constraint firstItem="dkg-VL-qbz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mie-Uw-9qW"/>
+                            <constraint firstItem="dkg-VL-qbz" firstAttribute="top" secondItem="OYn-GQ-Ua0" secondAttribute="bottom" constant="24" id="sxC-gb-3ZU"/>
                             <constraint firstItem="oiz-ij-aPJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="zqb-wz-xnf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -101,10 +66,7 @@
                     <connections>
                         <outlet property="foodLabel" destination="OYn-GQ-Ua0" id="K0W-Y5-NWB"/>
                         <outlet property="imageView" destination="7TS-Xj-NxO" id="B7w-2P-e0g"/>
-                        <outlet property="initialTimeLabel" destination="rFs-4z-bD3" id="oA2-gs-mYh"/>
-                        <outlet property="initialTimeSlider" destination="vIA-cH-i39" id="4w4-95-3OJ"/>
-                        <outlet property="startButton" destination="zzd-aI-N56" id="1AN-DD-HkZ"/>
-                        <outlet property="stopButton" destination="7SN-Cb-hSp" id="k8Y-kx-c8Q"/>
+                        <outlet property="nextButton" destination="dkg-VL-qbz" id="SyP-yi-fMi"/>
                         <outlet property="topLabel" destination="oiz-ij-aPJ" id="1fv-Wi-oxn"/>
                     </connections>
                 </viewController>
@@ -126,10 +88,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-fX-7sO">
+                                <rect key="frame" x="16" y="100" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aPg-fX-7sO" firstAttribute="leading" secondItem="bLR-kZ-fL0" secondAttribute="leading" constant="16" id="BAU-k3-mGV"/>
+                            <constraint firstItem="aPg-fX-7sO" firstAttribute="top" secondItem="bLR-kZ-fL0" secondAttribute="top" constant="22" id="EJ7-ON-L9o"/>
+                            <constraint firstItem="aPg-fX-7sO" firstAttribute="centerX" secondItem="Qgy-Kr-SnS" secondAttribute="centerX" id="UUz-rZ-wLh"/>
                             <constraint firstItem="PF0-ma-WWi" firstAttribute="centerY" secondItem="Qgy-Kr-SnS" secondAttribute="centerY" id="Zr5-iq-6eL"/>
+                            <constraint firstItem="bLR-kZ-fL0" firstAttribute="trailing" secondItem="aPg-fX-7sO" secondAttribute="trailing" constant="16" id="dYe-uT-mXZ"/>
                             <constraint firstItem="PF0-ma-WWi" firstAttribute="centerX" secondItem="Qgy-Kr-SnS" secondAttribute="centerX" id="usK-Pv-9XQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bLR-kZ-fL0"/>
@@ -137,11 +108,21 @@
                     <navigationItem key="navigationItem" title="Add Food" prompt="Food App" id="vUf-Xc-OaO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="D5J-Yr-dlP">
                             <connections>
-                                <segue destination="dXc-pB-ydc" kind="unwind" unwindAction="unwindFromAddFoodViewWithSender:" id="VxR-mz-EDq"/>
+                                <action selector="cancelTapped:" destination="ORw-NH-sNZ" id="pZP-zf-D52"/>
+                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="VxR-mz-EDq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="OQA-ns-crf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="OQA-ns-crf">
+                            <connections>
+                                <action selector="saveTapped:" destination="ORw-NH-sNZ" id="SnC-8J-UiZ"/>
+                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="fhH-H2-aw6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageLabel" destination="PF0-ma-WWi" id="xZ0-ce-7Ks"/>
+                        <outlet property="textField" destination="aPg-fX-7sO" id="ZQI-1m-SYZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yo-Zx-maE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="dXc-pB-ydc" userLabel="Exit" sceneMemberID="exit"/>

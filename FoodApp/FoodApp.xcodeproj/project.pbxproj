@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73332EA723F32D8000341238 /* genericFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73332EA623F32D8000341238 /* genericFood.jpg */; };
 		737EDADE23F30B51000347AA /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737EDADD23F30B51000347AA /* AddFoodViewController.swift */; };
 		73816C0E23D0C46C0001D73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73816C0D23D0C46C0001D73F /* AppDelegate.swift */; };
 		73816C1023D0C46C0001D73F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73816C0F23D0C46C0001D73F /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73332EA623F32D8000341238 /* genericFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = genericFood.jpg; sourceTree = SOURCE_ROOT; };
 		737EDADD23F30B51000347AA /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		73816C0A23D0C46C0001D73F /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73816C0D23D0C46C0001D73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				73816C0D23D0C46C0001D73F /* AppDelegate.swift */,
 				73816C0F23D0C46C0001D73F /* SceneDelegate.swift */,
 				73816C1123D0C46C0001D73F /* ViewController.swift */,
+				73332EA623F32D8000341238 /* genericFood.jpg */,
 				73816C1323D0C46C0001D73F /* Main.storyboard */,
 				73F7561B23D0CE480020A67A /* 1.jpg */,
 				73F01E6E23DE5CBE008A0EA0 /* 2.jpg */,
@@ -146,6 +149,7 @@
 				73F01E6F23DE5CBE008A0EA0 /* 2.jpg in Resources */,
 				73F7561C23D0CE480020A67A /* 1.jpg in Resources */,
 				73816C1A23D0C46E0001D73F /* LaunchScreen.storyboard in Resources */,
+				73332EA723F32D8000341238 /* genericFood.jpg in Resources */,
 				73816C1723D0C46E0001D73F /* Assets.xcassets in Resources */,
 				73F01E6D23DE54C2008A0EA0 /* Default-568h@2x.png in Resources */,
 				73F01E7123DE6299008A0EA0 /* 3.jpg in Resources */,

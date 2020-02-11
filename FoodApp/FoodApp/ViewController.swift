@@ -8,81 +8,47 @@
 
 import UIKit
 
-class ViewController: UIViewController, MyTimerDelegate {
+class ViewController: UIViewController {
     var count: Int = 1
     var ordinalFoods:[Int:String] = [1: "Pasta!", 2: "Sushi!", 3: "Chicken!"]
-    var initialTime = 5
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
-    @IBOutlet weak var initialTimeLabel: UILabel!
-    @IBOutlet weak var initialTimeSlider: UISlider!
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func nextButtonTapped(_sender: Any) {
         count += 1
-        if count > 3 {
+        if count > ordinalFoods.count {
             count = 1
         }
         
-        imageView.image = UIImage(named: String(count) + ".jpg")
-        topLabel.text = "My #" + String(count) + " favorite food is..."
-        foodLabel.text = ordinalFoods[count]!
-    }
-    
-    @IBAction func initialTimeSliderValueChanged(_ sender: UISlider) {
-        let initTime = Int(sender.value)
-        initialTimeLabel.text = "Delay: \(initTime)s"
-        myTimer?.setInitialTime(initTime)
-    }
-    
-    @IBAction func startTapped(_ sender: UIButton) {
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
-        myTimer?.start()
-    }
-    
-    @IBAction func stopTapped(_ sender: UIButton) {
-        startButton.isEnabled = true
-        stopButton.isEnabled = false
-        myTimer?.stop()
+        if count > 3 {
+            imageView.image = UIImage(named: "genericFood.jpg")
+            topLabel.text = "My #" + String(count) + " favorite food is..."
+            foodLabel.text = ordinalFoods[count]!
+        } else {
+            imageView.image = UIImage(named: String(count) + ".jpg")
+            topLabel.text = "My #" + String(count) + " favorite food is..."
+            foodLabel.text = ordinalFoods[count]!
+        }
     }
     
     @IBAction func unwindFromAddFoodView (sender: UIStoryboardSegue) {
         let addFoodVC = sender.source as! AddFoodViewController
-        // if let secondViewText = secondVC.secondViewText {
-        // print("Second View Text: \(secondViewText)")
-        // }
+        let fromAddFoodViewData = addFoodVC.addFoodViewData
+        let buttonTapped = addFoodVC.buttonTapped
+        print("second view data = \(fromAddFoodViewData)")
+        print("button tapped = \(buttonTapped)")
         
-    }
-    
-    func timeChanged(time: Int) {
-        print("Time changed")
-    }
-    
-    func timesUp() {
-        count += 1
-        if count > 3 {
-            count = 1
-        }
-        
-        imageView.image = UIImage(named: String(count) + ".jpg")
-        topLabel.text = "My #" + String(count) + " favorite food is..."
-        foodLabel.text = ordinalFoods[count]!
-        
-        myTimer?.reset()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addFromView1") {
             let addFoodVC = segue.destination as! AddFoodViewController
-            // secondVC.messageFromFirstView = messageTextField.text
+            addFoodVC.messageFromFirstView = "Enter name of food #" + String(ordinalFoods.count + 1)
         }
     }
-    
-    var myTimer: MyTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,11 +57,5 @@ class ViewController: UIViewController, MyTimerDelegate {
         topLabel.text = "My #1 favorite food is..."
         imageView.image = UIImage(named: "1.jpg")
         foodLabel.text = "Pasta!"
-        myTimer = MyTimer()
-        myTimer?.delegate = self
-        myTimer?.setInitialTime(initialTime)
-        initialTimeLabel.text = "Delay: \(initialTime)s"
-        startButton.isEnabled = true
-        stopButton.isEnabled = false
     }
 }
