@@ -35,12 +35,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindFromAddFoodView (sender: UIStoryboardSegue) {
+        // Get data from the second view.
         let addFoodVC = sender.source as! AddFoodViewController
         let fromAddFoodViewData = addFoodVC.addFoodViewData
         let buttonTapped = addFoodVC.buttonTapped
-        print("second view data = \(fromAddFoodViewData)")
-        print("button tapped = \(buttonTapped)")
         
+        // Add the food data to the food dictionary if it is valid.
+        if fromAddFoodViewData != nil {
+            if buttonTapped! == "save" {
+                ordinalFoods[ordinalFoods.count + 1] = fromAddFoodViewData!
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

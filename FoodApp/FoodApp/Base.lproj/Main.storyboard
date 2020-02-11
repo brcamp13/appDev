@@ -82,25 +82,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-ma-WWi">
-                                <rect key="frame" x="153" y="323" width="69" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-fX-7sO">
                                 <rect key="frame" x="16" y="100" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-ma-WWi">
+                                <rect key="frame" x="153" y="130" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aPg-fX-7sO" firstAttribute="leading" secondItem="bLR-kZ-fL0" secondAttribute="leading" constant="16" id="BAU-k3-mGV"/>
                             <constraint firstItem="aPg-fX-7sO" firstAttribute="top" secondItem="bLR-kZ-fL0" secondAttribute="top" constant="22" id="EJ7-ON-L9o"/>
                             <constraint firstItem="aPg-fX-7sO" firstAttribute="centerX" secondItem="Qgy-Kr-SnS" secondAttribute="centerX" id="UUz-rZ-wLh"/>
-                            <constraint firstItem="PF0-ma-WWi" firstAttribute="centerY" secondItem="Qgy-Kr-SnS" secondAttribute="centerY" id="Zr5-iq-6eL"/>
                             <constraint firstItem="bLR-kZ-fL0" firstAttribute="trailing" secondItem="aPg-fX-7sO" secondAttribute="trailing" constant="16" id="dYe-uT-mXZ"/>
+                            <constraint firstItem="PF0-ma-WWi" firstAttribute="firstBaseline" secondItem="aPg-fX-7sO" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="tuH-zD-MJ5"/>
                             <constraint firstItem="PF0-ma-WWi" firstAttribute="centerX" secondItem="Qgy-Kr-SnS" secondAttribute="centerX" id="usK-Pv-9XQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bLR-kZ-fL0"/>
