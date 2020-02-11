@@ -108,19 +108,21 @@
                     <navigationItem key="navigationItem" title="Add Food" prompt="Food App" id="vUf-Xc-OaO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="D5J-Yr-dlP">
                             <connections>
-                                <action selector="cancelTapped:" destination="ORw-NH-sNZ" id="pZP-zf-D52"/>
-                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="VxR-mz-EDq"/>
+                                <action selector="cancelTapped:" destination="ORw-NH-sNZ" id="Md2-1e-bcY"/>
+                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="FBj-Ry-OcG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="OQA-ns-crf">
                             <connections>
-                                <action selector="saveTapped:" destination="ORw-NH-sNZ" id="SnC-8J-UiZ"/>
-                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="fhH-H2-aw6"/>
+                                <action selector="saveTapped:" destination="ORw-NH-sNZ" id="Mt9-7e-8w6"/>
+                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="xcf-Xc-rkd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="D5J-Yr-dlP" id="kMU-KP-0DA"/>
                         <outlet property="messageLabel" destination="PF0-ma-WWi" id="xZ0-ce-7Ks"/>
+                        <outlet property="saveButton" destination="OQA-ns-crf" id="oaf-z8-9KI"/>
                         <outlet property="textField" destination="aPg-fX-7sO" id="ZQI-1m-SYZ"/>
                     </connections>
                 </viewController>

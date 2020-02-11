@@ -16,15 +16,19 @@ class AddFoodViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        buttonTapped = "cancel"
+        self.buttonTapped = "cancel"
+        print("cancel tapped")
         performSegue(withIdentifier: "View2ToView1", sender: nil)
     }
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
-        addFoodViewData = textField.text
-        buttonTapped = "save"
+        print("save tapped")
+        self.addFoodViewData = textField.text
+        self.buttonTapped = "save"
         performSegue(withIdentifier: "View2ToView1", sender: nil)
     }
     
@@ -32,8 +36,6 @@ class AddFoodViewController: UIViewController {
         super.viewDidLoad()
         
         messageLabel.text = messageFromFirstView
-
-        // Do any additional setup after loading the view.
     }
     
 
