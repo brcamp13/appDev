@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddFoodViewController: UIViewController {
+class AddFoodViewController: UIViewController, UITextFieldDelegate {
 
     var messageFromFirstView: String?
     var addFoodViewData: String?
@@ -36,6 +36,12 @@ class AddFoodViewController: UIViewController {
         super.viewDidLoad()
         
         messageLabel.text = messageFromFirstView
+        self.textField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 
