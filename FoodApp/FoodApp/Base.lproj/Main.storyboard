@@ -109,13 +109,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="D5J-Yr-dlP">
                             <connections>
                                 <action selector="cancelTapped:" destination="ORw-NH-sNZ" id="Md2-1e-bcY"/>
-                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="FBj-Ry-OcG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="OQA-ns-crf">
                             <connections>
                                 <action selector="saveTapped:" destination="ORw-NH-sNZ" id="Mt9-7e-8w6"/>
-                                <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="xcf-Xc-rkd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,6 +122,7 @@
                         <outlet property="messageLabel" destination="PF0-ma-WWi" id="xZ0-ce-7Ks"/>
                         <outlet property="saveButton" destination="OQA-ns-crf" id="oaf-z8-9KI"/>
                         <outlet property="textField" destination="aPg-fX-7sO" id="ZQI-1m-SYZ"/>
+                        <segue destination="dXc-pB-ydc" kind="unwind" identifier="View2ToView1" unwindAction="unwindFromAddFoodViewWithSender:" id="6Gs-Zl-VYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yo-Zx-maE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

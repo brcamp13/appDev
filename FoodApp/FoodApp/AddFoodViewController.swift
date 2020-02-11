@@ -11,8 +11,8 @@ import UIKit
 class AddFoodViewController: UIViewController {
 
     var messageFromFirstView: String?
-    var addFoodViewData: String? = "none"
-    var buttonTapped: String = "none"
+    var addFoodViewData: String?
+    var buttonTapped: String?
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -20,16 +20,16 @@ class AddFoodViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        self.buttonTapped = "cancel"
         print("cancel tapped")
-        performSegue(withIdentifier: "View2ToView1", sender: nil)
+        buttonTapped = "cancel"
+        performSegue(withIdentifier: "View2ToView1", sender: self)
     }
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         print("save tapped")
-        self.addFoodViewData = textField.text
-        self.buttonTapped = "save"
-        performSegue(withIdentifier: "View2ToView1", sender: nil)
+        addFoodViewData = textField.text
+        buttonTapped = "save"
+        performSegue(withIdentifier: "View2ToView1", sender: self)
     }
     
     override func viewDidLoad() {
