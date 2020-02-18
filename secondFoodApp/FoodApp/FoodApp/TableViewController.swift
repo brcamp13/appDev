@@ -9,15 +9,34 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    var foods = [FoodItem]()
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    @IBAction func addTapped(_ sender: UIBarButtonItem) {
+        // Add generic food item to the foods array.
+        let genericFood = FoodItem(name: "Generic", imageName: "genericFood.jpg", calories: 690)
+        self.foods.append(genericFood)
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let pasta = FoodItem(name: "Pasta", imageName: "pasta.jpg", calories: 500)
+        let sushi = FoodItem(name: "Sushi", imageName: "sushi.jpg", calories: 150)
+        let chicken = FoodItem(name: "Chicken", imageName: "chicken.jpg", calories: 250)
+        self.foods.append(pasta)
+        self.foods.append(sushi)
+        self.foods.append(chicken)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Initialize an array of three food items, all different.
     }
 
     // MARK: - Table view data source

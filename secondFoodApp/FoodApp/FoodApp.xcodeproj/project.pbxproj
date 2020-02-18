@@ -14,6 +14,10 @@
 		73AD2DBB23FB5F9800635863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DB923FB5F9800635863 /* LaunchScreen.storyboard */; };
 		73AD2DC323FB615C00635863 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DC223FB615C00635863 /* TableViewController.swift */; };
 		73AD2DC523FB641B00635863 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DC423FB641B00635863 /* FoodItem.swift */; };
+		73AD2DC723FB69F500635863 /* chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DC623FB69F500635863 /* chicken.jpg */; };
+		73AD2DC923FB69FE00635863 /* genericFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DC823FB69FE00635863 /* genericFood.jpg */; };
+		73AD2DCB23FB6A0400635863 /* pasta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DCA23FB6A0400635863 /* pasta.jpg */; };
+		73AD2DCD23FB6A0900635863 /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DCC23FB6A0900635863 /* sushi.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		73AD2DBC23FB5F9800635863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AD2DC223FB615C00635863 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		73AD2DC423FB641B00635863 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		73AD2DC623FB69F500635863 /* chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chicken.jpg; path = ../../chicken.jpg; sourceTree = "<group>"; };
+		73AD2DC823FB69FE00635863 /* genericFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = genericFood.jpg; path = ../../genericFood.jpg; sourceTree = "<group>"; };
+		73AD2DCA23FB6A0400635863 /* pasta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pasta.jpg; path = ../../pasta.jpg; sourceTree = "<group>"; };
+		73AD2DCC23FB6A0900635863 /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushi.jpg; path = ../../sushi.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,11 @@
 				73AD2DB023FB5F9700635863 /* SceneDelegate.swift */,
 				73AD2DB423FB5F9700635863 /* Main.storyboard */,
 				73AD2DC423FB641B00635863 /* FoodItem.swift */,
+				73AD2DC823FB69FE00635863 /* genericFood.jpg */,
+				73AD2DCA23FB6A0400635863 /* pasta.jpg */,
 				73AD2DC223FB615C00635863 /* TableViewController.swift */,
+				73AD2DC623FB69F500635863 /* chicken.jpg */,
+				73AD2DCC23FB6A0900635863 /* sushi.jpg */,
 				73AD2DB723FB5F9800635863 /* Assets.xcassets */,
 				73AD2DB923FB5F9800635863 /* LaunchScreen.storyboard */,
 				73AD2DBC23FB5F9800635863 /* Info.plist */,
@@ -128,9 +140,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AD2DC923FB69FE00635863 /* genericFood.jpg in Resources */,
 				73AD2DBB23FB5F9800635863 /* LaunchScreen.storyboard in Resources */,
 				73AD2DB823FB5F9800635863 /* Assets.xcassets in Resources */,
 				73AD2DB623FB5F9700635863 /* Main.storyboard in Resources */,
+				73AD2DCD23FB6A0900635863 /* sushi.jpg in Resources */,
+				73AD2DC723FB69F500635863 /* chicken.jpg in Resources */,
+				73AD2DCB23FB6A0400635863 /* pasta.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
