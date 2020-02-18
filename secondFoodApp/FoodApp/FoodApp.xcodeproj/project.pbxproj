@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7381EC3523FC423B00257404 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381EC3423FC423B00257404 /* FoodCell.swift */; };
 		73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DAE23FB5F9700635863 /* AppDelegate.swift */; };
 		73AD2DB123FB5F9700635863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DB023FB5F9700635863 /* SceneDelegate.swift */; };
 		73AD2DB623FB5F9700635863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DB423FB5F9700635863 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7381EC3423FC423B00257404 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		73AD2DAB23FB5F9700635863 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AD2DAE23FB5F9700635863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73AD2DB023FB5F9700635863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				73AD2DB023FB5F9700635863 /* SceneDelegate.swift */,
 				73AD2DB423FB5F9700635863 /* Main.storyboard */,
 				73AD2DC423FB641B00635863 /* FoodItem.swift */,
+				7381EC3423FC423B00257404 /* FoodCell.swift */,
 				73AD2DC823FB69FE00635863 /* genericFood.jpg */,
 				73AD2DCA23FB6A0400635863 /* pasta.jpg */,
 				73AD2DC223FB615C00635863 /* TableViewController.swift */,
@@ -159,6 +162,7 @@
 			files = (
 				73AD2DC523FB641B00635863 /* FoodItem.swift in Sources */,
 				73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */,
+				7381EC3523FC423B00257404 /* FoodCell.swift in Sources */,
 				73AD2DC323FB615C00635863 /* TableViewController.swift in Sources */,
 				73AD2DB123FB5F9700635863 /* SceneDelegate.swift in Sources */,
 			);

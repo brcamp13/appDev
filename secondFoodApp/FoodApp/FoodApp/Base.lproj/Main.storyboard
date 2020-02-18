@@ -15,13 +15,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9hY-kK-5Vi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" id="cyb-MW-tQ0" customClass="FoodCell" customModule="FoodApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9hY-kK-5Vi" id="dd4-jd-lL2">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyb-MW-tQ0" id="gQ4-nq-Q6h">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbt-md-1qd">
+                                            <rect key="frame" x="16" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-ag-oBP">
+                                            <rect key="frame" x="93" y="11.5" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 cals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfY-2F-uHz">
+                                            <rect key="frame" x="317" y="11.5" width="46" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dbt-md-1qd" firstAttribute="centerY" secondItem="gQ4-nq-Q6h" secondAttribute="centerY" id="25L-vG-fef"/>
+                                        <constraint firstItem="VcY-ag-oBP" firstAttribute="leading" secondItem="dbt-md-1qd" secondAttribute="trailing" constant="27" id="9Ln-Mo-GR5"/>
+                                        <constraint firstItem="FfY-2F-uHz" firstAttribute="leading" secondItem="VcY-ag-oBP" secondAttribute="trailing" constant="135" id="fvc-0y-KKY"/>
+                                        <constraint firstAttribute="trailing" secondItem="FfY-2F-uHz" secondAttribute="trailing" constant="12" id="uj7-Xf-nLH"/>
+                                        <constraint firstItem="VcY-ag-oBP" firstAttribute="centerY" secondItem="gQ4-nq-Q6h" secondAttribute="centerY" id="yc0-7S-CJ9"/>
+                                        <constraint firstItem="FfY-2F-uHz" firstAttribute="centerY" secondItem="gQ4-nq-Q6h" secondAttribute="centerY" id="yer-ho-x5g"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="calorieLabel" destination="FfY-2F-uHz" id="oEd-8L-Kgf"/>
+                                    <outlet property="foodImageView" destination="dbt-md-1qd" id="yoI-vt-ZbB"/>
+                                    <outlet property="foodNameLabel" destination="VcY-ag-oBP" id="oWj-Qj-U6l"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

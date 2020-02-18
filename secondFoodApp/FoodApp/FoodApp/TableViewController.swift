@@ -24,12 +24,16 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add the starting food items to the food array.
         let pasta = FoodItem(name: "Pasta", imageName: "pasta.jpg", calories: 500)
         let sushi = FoodItem(name: "Sushi", imageName: "sushi.jpg", calories: 150)
         let chicken = FoodItem(name: "Chicken", imageName: "chicken.jpg", calories: 250)
         self.foods.append(pasta)
         self.foods.append(sushi)
         self.foods.append(chicken)
+        
+        tableView.rowHeight = 58
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,23 +47,25 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.foods.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodCell
+        let indexRow = indexPath.row
+        cell.foodNameLabel.text = self.foods[indexRow].name
+        cell.foodImageView.image = UIImage(named: self.foods[indexRow].imageName)
+        cell.calorieLabel.text = "\(self.foods[indexRow].calories) cals"
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
