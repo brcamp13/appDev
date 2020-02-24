@@ -1,32 +1,24 @@
 //
-//  TableViewController.swift
+//  SettingsTableViewController.swift
 //  FoodApp
 //
-//  Created by Brandon Campbell on 2/17/20.
+//  Created by Brandon Campbell on 2/24/20.
 //  Copyright © 2020 Brandon Campbell. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
-    var foods = [FoodItem]()
-    var sortedFoods = [FoodItem]()
-    
-    @IBOutlet weak var addButton: UIBarButtonItem!
-    
-    @IBAction func addTapped(_ sender: UIBarButtonItem) {
-        // Add generic food item to the foods array.
-        let genericFood = FoodItem(name: "Generic", imageName: "genericFood.jpg", calories: 690)
-        self.foods.append(genericFood)
-        tableView.reloadData()
-    }
+class SettingsTableViewController: UITableViewController {
 
+   
+    @IBOutlet weak var sortItemsSwitch: UISwitch!
+    
+    @IBAction func sortItemsSwitchChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: "sortItems")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initialize()
-        processItems()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,30 +26,10 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        // Initialize an array of three food items, all different.
-    }
-    
-    func initialize() {
-        // Add the starting food items to the food array.
-        let pasta = FoodItem(name: "Pasta", imageName: "pasta.jpg", calories: 500)
-        let sushi = FoodItem(name: "Sushi", imageName: "sushi.jpg", calories: 150)
-        let chicken = FoodItem(name: "Chicken", imageName: "chicken.jpg", calories: 250)
-        self.foods.append(pasta)
-        self.foods.append(sushi)
-        self.foods.append(chicken)
-        
-        tableView.rowHeight = 58
+        sortItemsSwitch.isOn = UserDefaults.standard.bool(forKey: "sortItems")
     }
 
     // MARK: - Table view data source
-    
-    func processItems() {
-        if UserDefaults.standard.bool(forKey: "sortItems") {
-            sortedFoods = foods.sorted(by: {$0.name < $1.name})
-        } else{
-            sortedFoods = foods
-        }
-    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -66,37 +38,38 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.sortedFoods.count
+        return 1
     }
 
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodCell
-        let indexRow = indexPath.row
-        cell.foodNameLabel.text = self.sortedFoods[indexRow].name
-        cell.foodImageView.image = UIImage(named: self.sortedFoods[indexRow].imageName)
-        cell.calorieLabel.text = "\(self.sortedFoods[indexRow].calories) cals"
+        // Configure the cell...
+
         return cell
     }
+    */
 
-
-    
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    */
 
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source first
-            let row = indexPath.row
-            self.foods.remove(at: row)
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
     }
+    */
 
     /*
     // Override to support rearranging the table view.

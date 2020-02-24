@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if (UserDefaults.standard.object(forKey: "sortItems") == nil) {
+            UserDefaults.standard.set(true, forKey: "sortItems")
+        }
         return true
     }
 

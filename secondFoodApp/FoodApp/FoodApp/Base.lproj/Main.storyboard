@@ -64,9 +64,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite Foods" prompt="Food App" id="vYb-lS-dPo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ONR-N2-wC7"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="xwZ-Ud-dfk">
                             <connections>
-                                <segue destination="8oW-Lb-kLJ" kind="show" id="lTD-h6-BbR"/>
+                                <segue destination="hUQ-P3-DCd" kind="show" id="b7C-X4-9li"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="r51-qN-1ce">
@@ -82,55 +83,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hw-Jv-I6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="123.68815592203899"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="8t2-OA-x1i">
-            <objects>
-                <tableViewController id="8oW-Lb-kLJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NZI-cR-ghc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Section-1" id="c7I-CR-cSD">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rxo-VR-vvh">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="1.1920928955078125e-07"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rxo-VR-vvh" id="7Te-Mr-wmT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1.1920928955078125e-07"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EMM-nS-DdP">
-                                        <rect key="frame" x="0.0" y="28.00000011920929" width="375" height="1.1920928955078125e-07"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EMM-nS-DdP" id="YPU-AK-BjB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1.1920928955078125e-07"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DzN-7l-Lt7">
-                                        <rect key="frame" x="0.0" y="28.000000238418579" width="375" height="1.1920928955078125e-07"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DzN-7l-Lt7" id="7FF-Lj-0xh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1.1920928955078125e-07"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="8oW-Lb-kLJ" id="GPh-HQ-GDn"/>
-                            <outlet property="delegate" destination="8oW-Lb-kLJ" id="VLm-f0-WBG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Settings" prompt="Food App" id="k9z-y6-uS2"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KW4-sX-9le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="833" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oRd-0A-bbf">
@@ -149,6 +101,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8Z-zY-76k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-799.20000000000005" y="123.68815592203899"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="wm1-CV-ZH4">
+            <objects>
+                <tableViewController id="hUQ-P3-DCd" customClass="SettingsTableViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="14R-Iu-dD9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="nC2-YR-LCF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vi2-w2-SAg">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vi2-w2-SAg" id="PEx-4N-Hqc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-Sv-5Ci">
+                                                    <rect key="frame" x="16" y="11.5" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZeK-bd-QRv">
+                                                    <rect key="frame" x="306" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sortItemsSwitchChanged:" destination="hUQ-P3-DCd" eventType="valueChanged" id="x6N-eK-8VT"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ZeK-bd-QRv" secondAttribute="trailing" constant="20" symbolic="YES" id="2DY-61-c5L"/>
+                                                <constraint firstItem="ZeK-bd-QRv" firstAttribute="centerY" secondItem="PEx-4N-Hqc" secondAttribute="centerY" id="6eU-J7-hEO"/>
+                                                <constraint firstItem="gWM-Sv-5Ci" firstAttribute="centerY" secondItem="PEx-4N-Hqc" secondAttribute="centerY" id="mcY-v5-KQC"/>
+                                                <constraint firstItem="ZeK-bd-QRv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gWM-Sv-5Ci" secondAttribute="trailing" constant="8" symbolic="YES" id="u6b-NE-cBo"/>
+                                                <constraint firstItem="gWM-Sv-5Ci" firstAttribute="leading" secondItem="PEx-4N-Hqc" secondAttribute="leadingMargin" id="zmt-ti-jdU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="hUQ-P3-DCd" id="ezO-Mt-XpK"/>
+                            <outlet property="delegate" destination="hUQ-P3-DCd" id="BeW-HD-2CU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" prompt="Food App" id="eFn-jS-ahy"/>
+                    <connections>
+                        <outlet property="sortItemsSwitch" destination="ZeK-bd-QRv" id="nRm-tE-iWW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fic-EO-6eM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="124"/>
         </scene>
     </scenes>
     <resources>

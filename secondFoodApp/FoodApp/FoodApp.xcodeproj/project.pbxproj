@@ -19,6 +19,7 @@
 		73AD2DC923FB69FE00635863 /* genericFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DC823FB69FE00635863 /* genericFood.jpg */; };
 		73AD2DCB23FB6A0400635863 /* pasta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DCA23FB6A0400635863 /* pasta.jpg */; };
 		73AD2DCD23FB6A0900635863 /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DCC23FB6A0900635863 /* sushi.jpg */; };
+		73E4880124046B4600DFCCA9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		73AD2DC823FB69FE00635863 /* genericFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = genericFood.jpg; path = ../../genericFood.jpg; sourceTree = "<group>"; };
 		73AD2DCA23FB6A0400635863 /* pasta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pasta.jpg; path = ../../pasta.jpg; sourceTree = "<group>"; };
 		73AD2DCC23FB6A0900635863 /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushi.jpg; path = ../../sushi.jpg; sourceTree = "<group>"; };
+		73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				73AD2DAE23FB5F9700635863 /* AppDelegate.swift */,
 				73AD2DB023FB5F9700635863 /* SceneDelegate.swift */,
 				73AD2DB423FB5F9700635863 /* Main.storyboard */,
+				73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */,
 				73AD2DC423FB641B00635863 /* FoodItem.swift */,
 				7381EC3423FC423B00257404 /* FoodCell.swift */,
 				73AD2DC823FB69FE00635863 /* genericFood.jpg */,
@@ -162,6 +165,7 @@
 			files = (
 				73AD2DC523FB641B00635863 /* FoodItem.swift in Sources */,
 				73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */,
+				73E4880124046B4600DFCCA9 /* SettingsTableViewController.swift in Sources */,
 				7381EC3523FC423B00257404 /* FoodCell.swift in Sources */,
 				73AD2DC323FB615C00635863 /* TableViewController.swift in Sources */,
 				73AD2DB123FB5F9700635863 /* SceneDelegate.swift in Sources */,
