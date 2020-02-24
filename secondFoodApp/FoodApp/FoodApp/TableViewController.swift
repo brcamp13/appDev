@@ -58,6 +58,11 @@ class TableViewController: UITableViewController {
             sortedFoods = foods
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        processItems()
+        tableView.reloadData()
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
