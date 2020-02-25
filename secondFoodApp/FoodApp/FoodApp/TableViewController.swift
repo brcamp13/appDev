@@ -12,13 +12,15 @@ class TableViewController: UITableViewController {
     
     var foods = [FoodItem]()
     var sortedFoods = [FoodItem]()
+    var genericFoodName: String?
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         // Add generic food item to the foods array.
-        let genericFood = FoodItem(name: "Generic", imageName: "genericFood.jpg", calories: 690)
+        let genericFood = FoodItem(name: genericFoodName!, imageName: "genericFood.jpg", calories: 690)
         self.foods.append(genericFood)
+        processItems()
         tableView.reloadData()
     }
 
@@ -57,6 +59,8 @@ class TableViewController: UITableViewController {
         } else{
             sortedFoods = foods
         }
+        
+        genericFoodName = UserDefaults.standard.object(forKey: "genericFood") as? String
     }
     
     override func viewDidAppear(_ animated: Bool) {

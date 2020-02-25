@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (UserDefaults.standard.object(forKey: "sortItems") == nil) {
             UserDefaults.standard.set(true, forKey: "sortItems")
         }
+        
+        if (UserDefaults.standard.object(forKey: "genericFood") == nil) {
+            UserDefaults.standard.set("Food", forKey: "genericFood")
+        }
+        
         return true
     }
 

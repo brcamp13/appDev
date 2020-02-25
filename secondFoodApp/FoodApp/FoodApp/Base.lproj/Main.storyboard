@@ -142,6 +142,48 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4Cl-Dp-gUs">
+                                        <rect key="frame" x="0.0" y="71.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Cl-Dp-gUs" id="vKp-Nq-4yn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMe-bP-2xq">
+                                                    <rect key="frame" x="16" y="22" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOc-9H-IfQ">
+                                                    <rect key="frame" x="16" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ON7-Cj-qY8">
+                                                    <rect key="frame" x="271" y="5" width="97" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="jMY-ei-icN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="foodTextChanged:" destination="hUQ-P3-DCd" eventType="editingDidEnd" id="pd9-Z9-rj2"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mOc-9H-IfQ" firstAttribute="centerY" secondItem="vKp-Nq-4yn" secondAttribute="centerY" id="783-8n-EGx"/>
+                                                <constraint firstItem="mOc-9H-IfQ" firstAttribute="leading" secondItem="vKp-Nq-4yn" secondAttribute="leadingMargin" id="cl7-my-irB"/>
+                                                <constraint firstAttribute="trailing" secondItem="ON7-Cj-qY8" secondAttribute="trailing" constant="7" id="i2l-mR-1FC"/>
+                                                <constraint firstItem="yMe-bP-2xq" firstAttribute="leading" secondItem="vKp-Nq-4yn" secondAttribute="leadingMargin" id="ovb-Cz-eeJ"/>
+                                                <constraint firstItem="ON7-Cj-qY8" firstAttribute="centerY" secondItem="vKp-Nq-4yn" secondAttribute="centerY" id="q36-ph-6g7"/>
+                                                <constraint firstItem="yMe-bP-2xq" firstAttribute="centerY" secondItem="vKp-Nq-4yn" secondAttribute="centerY" id="qW9-Kj-E1x"/>
+                                                <constraint firstItem="ON7-Cj-qY8" firstAttribute="leading" secondItem="mOc-9H-IfQ" secondAttribute="trailing" constant="213" id="xkc-b7-rvC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -152,12 +194,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" prompt="Food App" id="eFn-jS-ahy"/>
                     <connections>
+                        <outlet property="foodText" destination="ON7-Cj-qY8" id="Ag7-Ps-4Rj"/>
                         <outlet property="sortItemsSwitch" destination="ZeK-bd-QRv" id="nRm-tE-iWW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fic-EO-6eM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911" y="124"/>
+            <point key="canvasLocation" x="909.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
     <resources>

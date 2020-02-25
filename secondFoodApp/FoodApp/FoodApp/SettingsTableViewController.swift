@@ -17,6 +17,13 @@ class SettingsTableViewController: UITableViewController {
         UserDefaults.standard.set(sender.isOn, forKey: "sortItems")
     }
     
+    @IBOutlet weak var foodText: UITextField!
+    
+    
+    @IBAction func foodTextChanged(_ sender: UITextField) {
+        UserDefaults.standard.set(sender.text, forKey: "genericFood")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +34,7 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         sortItemsSwitch.isOn = UserDefaults.standard.bool(forKey: "sortItems")
+        foodText.text = UserDefaults.standard.object(forKey: "genericFood") as? String
     }
 
     // MARK: - Table view data source
@@ -38,7 +46,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 2
     }
 
     /*
