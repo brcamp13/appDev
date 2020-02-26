@@ -10,8 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var foods = [FoodItem]()
-    var sortedFoods = [FoodItem]()
+    var foods = [(FoodItem, Int)]()
+    var sortedFoods = [(FoodItem, Int)]()
     var genericFoodName: String?
     
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         // Add generic food item to the foods array.
         let genericFood = FoodItem(name: genericFoodName!, imageName: "genericFood.jpg", calories: 690)
-        self.foods.append(genericFood)
+        self.foods.append((genericFood, foods.count))
         processItems()
         tableView.reloadData()
     }
@@ -44,9 +44,9 @@ class TableViewController: UITableViewController {
         let pasta = FoodItem(name: "Pasta", imageName: "pasta.jpg", calories: 500)
         let sushi = FoodItem(name: "Sushi", imageName: "sushi.jpg", calories: 150)
         let chicken = FoodItem(name: "Chicken", imageName: "chicken.jpg", calories: 250)
-        self.foods.append(pasta)
-        self.foods.append(sushi)
-        self.foods.append(chicken)
+        self.foods.append((pasta, foods.count))
+        self.foods.append((sushi, foods.count))
+        self.foods.append((chicken, foods.count))
         
         tableView.rowHeight = 58
     }
@@ -55,7 +55,7 @@ class TableViewController: UITableViewController {
     
     func processItems() {
         if UserDefaults.standard.bool(forKey: "sortItems") {
-            sortedFoods = foods.sorted(by: {$0.name < $1.name})
+            sortedFoods = foods.sorted(by: {$0.0.name < $1.0.name})
         } else{
             sortedFoods = foods
         }
@@ -83,9 +83,9 @@ class TableViewController: UITableViewController {
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodCell
         let indexRow = indexPath.row
-        cell.foodNameLabel.text = self.sortedFoods[indexRow].name
-        cell.foodImageView.image = UIImage(named: self.sortedFoods[indexRow].imageName)
-        cell.calorieLabel.text = "\(self.sortedFoods[indexRow].calories) cals"
+        cell.foodNameLabel.text = self.sortedFoods[indexRow].0.name
+        cell.foodImageView.image = UIImage(named: self.sortedFoods[indexRow].0.imageName)
+        cell.calorieLabel.text = "\(self.sortedFoods[indexRow].0.calories) cals"
         return cell
     }
 
@@ -102,7 +102,8 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source first
             let row = indexPath.row
-            self.foods.remove(at: row)
+            self.sortedFoods.remove(at: row)
+            self.foods = self.foods.filter {$0.1 != row}
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
