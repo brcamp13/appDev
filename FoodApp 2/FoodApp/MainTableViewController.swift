@@ -84,10 +84,10 @@ class MainTableViewController: UITableViewController {
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings(completionHandler: { (settings) in
             if settings.alertSetting == .enabled {
-                self.displaySchedulingAlert(cell: cell)
+                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
             } else {
                 print("Nothing is supposed to happen here lol")
-                self.displaySchedulingAlert(cell: cell)
+                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
             }
         })
         
@@ -96,13 +96,13 @@ class MainTableViewController: UITableViewController {
         // If no, nothing happens. If yes, item becomes red, notification scheduled for 5 seconds from now
     }
     
-    func displaySchedulingAlert(cell: FoodCell) {
+    func displaySchedulingAlert(cell: FoodCell, indexPath: IndexPath) {
         DispatchQueue.main.async {
             let notificationAlert = UIAlertController(title: "Food Notification", message: "Do you want to schedule a notification for the food " + cell.foodNameLabel.text!, preferredStyle: .alert)
             
             notificationAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
                 cell.backgroundColor = UIColor.red
-                self.scheduleNotification()
+                self.scheduleNotification(cell: cell, indexPath: indexPath)
             }))
             
             notificationAlert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
@@ -113,11 +113,11 @@ class MainTableViewController: UITableViewController {
         }
     }
     
-    func scheduleNotification() {
+    func scheduleNotification(cell: FoodCell, indexPath: IndexPath) {
         let content = UNMutableNotificationContent()
         content.title = "Food Notification"
         content.body = "Time to eat the food"
-        content.userInfo["message"] = "Yo!"
+        content.userInfo["userID"] = foodItems[indexPath.row].id
         // Configure trigger for 5 seconds from now
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0,
         repeats: false)
