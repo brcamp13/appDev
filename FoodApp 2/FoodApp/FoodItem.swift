@@ -12,10 +12,14 @@ class FoodItem {
     var name: String
     var imageFileName: String
     var caloriesPerServing: Int
+    var id: String
+    var notificationScheduled: Bool
     
-    init(name: String, imageFileName: String, caloriesPerServing: Int) {
+    init(name: String, imageFileName: String, caloriesPerServing: Int, notificationScheduled: Bool) {
         self.name = name
         self.imageFileName = imageFileName
         self.caloriesPerServing = caloriesPerServing
+        self.id = UUID().uuidString
+        self.notificationScheduled = notificationScheduled
     }
 }
