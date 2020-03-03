@@ -101,7 +101,7 @@ class MainTableViewController: UITableViewController {
             let notificationAlert = UIAlertController(title: "Food Notification", message: "Do you want to schedule a notification for the food " + cell.foodNameLabel.text!, preferredStyle: .alert)
             
             notificationAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-                cell.backgroundColor = UIColor.red
+                cell.foodNameLabel.textColor = UIColor.red
                 self.scheduleNotification(cell: cell, indexPath: indexPath)
             }))
             
@@ -117,7 +117,7 @@ class MainTableViewController: UITableViewController {
         let content = UNMutableNotificationContent()
         content.title = "Food Notification"
         content.body = "Time to eat the food"
-        content.userInfo["userID"] = foodItems[indexPath.row].id
+        content.userInfo["foodID"] = foodItems[indexPath.row].id
         // Configure trigger for 5 seconds from now
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0,
         repeats: false)
@@ -131,6 +131,22 @@ class MainTableViewController: UITableViewController {
                 print(err.localizedDescription)
             }
         })
+    }
+    
+    func handleNotification(response: UNNotificationResponse) {
+        let foodId = response.notification.request.content.userInfo["userId"] as! String
+        
+        let index = foodItems.firstIndex(where: { (item) -> Bool in
+            item.id == foodId
+        })
+        
+        // Access the cell and change its text color to black. 
+        let indexPath = IndexPath(row: index!, section: 1)
+        let cell = tableView.cellForRow(at: indexPath) as! FoodCell
+        cell.foodNameLabel.textColor = UIColor.black
+        
+        
+        print("received notification foodId: \(foodId)")
     }
 
     /*
