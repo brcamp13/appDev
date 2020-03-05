@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Do stuff with response here (non-blocking)
         let navVC = UIApplication.shared.windows.first!.rootViewController as!
         UINavigationController
-        if let mainVC = navVC.topViewController as? ViewController {
-            mainVC.handleNotification(response)
+        if let mainVC = navVC.topViewController as? MainTableViewController {
+            mainVC.handleNotification(response: response)
         }
         completionHandler()
     }
