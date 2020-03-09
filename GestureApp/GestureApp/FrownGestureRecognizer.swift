@@ -1,5 +1,5 @@
 //
-//  SmileGestureDetector.swift
+//  FrownGestureRecognizer.swift
 //  GestureApp
 //
 //  Created by Brandon Campbell on 3/9/20.
@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-enum SmilePhases {
+enum FrownPhases {
     case notStarted
     case initialPoint
     case downStroke
     case upStroke
 }
-class SmileGestureRecognizer : UIGestureRecognizer {
-    var strokePhase : SmilePhases = .notStarted
+class FrownGestureRecognizer : UIGestureRecognizer {
+    var strokePhase : FrownPhases = .notStarted
     var initialTouchPoint : CGPoint = CGPoint.zero
     var trackedTouch : UITouch? = nil
     
@@ -53,27 +53,30 @@ class SmileGestureRecognizer : UIGestureRecognizer {
        let newPoint = (newTouch?.location(in: self.view))!
        let previousPoint = (newTouch?.previousLocation(in: self.view))!
        if self.strokePhase == .initialPoint {
-          // Make sure the initial movement is down and to the right.
+          // Make sure the initial movement is up and to the right.
           if newPoint.x >= initialTouchPoint.x && newPoint.y >= initialTouchPoint.y {
-             self.strokePhase = .downStroke
+             print("upstroke")
+             self.strokePhase = .upStroke
           } else {         self.state = .failed
           }
-       } else if self.strokePhase == .downStroke {
+       } else if self.strokePhase == .upStroke {
           // Always keep moving left to right.
           if newPoint.x >= previousPoint.x {
-             // If the y direction changes, the gesture is moving up again.
+             // If the y direction changes, the gesture is down.
              // Otherwise, the down stroke continues.
-             if newPoint.y < previousPoint.y {
-                self.strokePhase = .upStroke
+             if newPoint.y > previousPoint.y {
+                print("downstroke")
+                self.strokePhase = .downStroke
              }
           } else {
             // If the new x value is to the left, the gesture fails.
             self.state = .failed
           }
-       } else if self.strokePhase == .upStroke {
+       } else if self.strokePhase == .downStroke {
           // If the new x value is to the left, or the new y value
           // changed directions again, the gesture fails.]
-          if newPoint.x < previousPoint.x || newPoint.y > previousPoint.y {
+          if newPoint.x < previousPoint.x || newPoint.y < previousPoint.y {
+             print("failed")
              self.state = .failed
           }
        }
@@ -91,8 +94,8 @@ class SmileGestureRecognizer : UIGestureRecognizer {
        // If the stroke was moving up and the final point is
        // above the initial point, the gesture succeeds.
        if self.state == .possible &&
-             self.strokePhase == .upStroke &&
-             newPoint.y <= initialTouchPoint.y {
+             self.strokePhase == .downStroke &&
+             newPoint.y >= initialTouchPoint.y {
           self.state = .recognized
        } else {
           self.state = .failed

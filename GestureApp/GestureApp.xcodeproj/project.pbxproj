@@ -14,6 +14,7 @@
 		73AC7A112416BF470029D20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73AC7A102416BF470029D20B /* Assets.xcassets */; };
 		73AC7A142416BF470029D20B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AC7A122416BF470029D20B /* LaunchScreen.storyboard */; };
 		73AC7A1C2416C9720029D20B /* SmileGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC7A1B2416C9720029D20B /* SmileGestureRecognizer.swift */; };
+		73AC7A1E2416D40A0029D20B /* FrownGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC7A1D2416D40A0029D20B /* FrownGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		73AC7A132416BF470029D20B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73AC7A152416BF470029D20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AC7A1B2416C9720029D20B /* SmileGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileGestureRecognizer.swift; sourceTree = "<group>"; };
+		73AC7A1D2416D40A0029D20B /* FrownGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrownGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				73AC7A0B2416BF460029D20B /* ViewController.swift */,
 				73AC7A0D2416BF460029D20B /* Main.storyboard */,
 				73AC7A1B2416C9720029D20B /* SmileGestureRecognizer.swift */,
+				73AC7A1D2416D40A0029D20B /* FrownGestureRecognizer.swift */,
 				73AC7A102416BF470029D20B /* Assets.xcassets */,
 				73AC7A122416BF470029D20B /* LaunchScreen.storyboard */,
 				73AC7A152416BF470029D20B /* Info.plist */,
@@ -145,6 +148,7 @@
 				73AC7A0C2416BF460029D20B /* ViewController.swift in Sources */,
 				73AC7A082416BF460029D20B /* AppDelegate.swift in Sources */,
 				73AC7A0A2416BF460029D20B /* SceneDelegate.swift in Sources */,
+				73AC7A1E2416D40A0029D20B /* FrownGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

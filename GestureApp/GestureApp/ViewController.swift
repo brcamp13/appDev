@@ -19,8 +19,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let smileGestureRecognizer = SmileGestureRecognizer(target: self, action: #selector(handleSmile))
+        let frownGestureRecognizer = FrownGestureRecognizer(target: self, action: #selector(handleFrown))
         smileGestureRecognizer.delegate = self
+        frownGestureRecognizer.delegate = self
         self.view.addGestureRecognizer(smileGestureRecognizer)
+        self.view.addGestureRecognizer(frownGestureRecognizer)
     }
     
     @objc func handleSmile(_ sender: SmileGestureRecognizer) {
@@ -28,7 +31,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             print("smile detected")
         }
     }
-
-
+    
+    @objc func handleFrown(_ sender: FrownGestureRecognizer) {
+        if sender.state == .ended {
+            print("frown detected")
+        }
+    }
 }
 
