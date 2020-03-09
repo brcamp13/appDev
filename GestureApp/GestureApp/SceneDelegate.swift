@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  FoodApp
+//  GestureApp
 //
-//  Created by Larry Holder on 2/12/20.
-//  Copyright © 2020 Washington State University. All rights reserved.
+//  Created by Brandon Campbell on 3/9/20.
+//  Copyright © 2020 Brandon Campbell. All rights reserved.
 //
 
 import UIKit
