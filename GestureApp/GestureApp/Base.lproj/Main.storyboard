@@ -30,6 +30,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cg4-3f-TZO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Ox-2T-R85"/>
                             <constraint firstItem="swt-E4-Ctr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Kz-hu-bJl"/>
@@ -39,10 +40,19 @@
                             <constraint firstItem="fRS-md-hKk" firstAttribute="top" secondItem="swt-E4-Ctr" secondAttribute="bottom" constant="8" id="xGS-Ub-ssO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kxA-V6-dkm" appends="YES" id="w9z-aw-0e1"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Review" prompt="Food App" id="Qgw-ZI-4Vh"/>
+                    <connections>
+                        <outlet property="BottomImage" destination="swt-E4-Ctr" id="cVF-LU-gee"/>
+                        <outlet property="BottomLabel" destination="cg4-3f-TZO" id="Mcq-V5-5FZ"/>
+                        <outlet property="ClearButton" destination="fRS-md-hKk" id="tTu-Tb-JgK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <gestureRecognizer id="kxA-V6-dkm"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="126.38680659670166"/>
         </scene>
