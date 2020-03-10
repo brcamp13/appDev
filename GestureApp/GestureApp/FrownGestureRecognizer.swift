@@ -95,7 +95,7 @@ class FrownGestureRecognizer : UIGestureRecognizer {
        // above the initial point, the gesture succeeds.
        if self.state == .possible &&
              self.strokePhase == .downStroke &&
-             newPoint.y >= initialTouchPoint.y {
+             abs(newPoint.y - initialTouchPoint.y) < 50 {
           self.state = .recognized
        } else {
           self.state = .failed
