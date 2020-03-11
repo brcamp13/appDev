@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7357CE702419738800C21E1A /* frown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7357CE6E2419738800C21E1A /* frown.png */; };
+		7357CE712419738800C21E1A /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = 7357CE6F2419738800C21E1A /* smiley.png */; };
 		73AC7A082416BF460029D20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC7A072416BF460029D20B /* AppDelegate.swift */; };
 		73AC7A0A2416BF460029D20B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC7A092416BF460029D20B /* SceneDelegate.swift */; };
 		73AC7A0C2416BF460029D20B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC7A0B2416BF460029D20B /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7357CE6E2419738800C21E1A /* frown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frown.png; sourceTree = SOURCE_ROOT; };
+		7357CE6F2419738800C21E1A /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = SOURCE_ROOT; };
 		73AC7A042416BF460029D20B /* GestureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AC7A072416BF460029D20B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73AC7A092416BF460029D20B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				73AC7A092416BF460029D20B /* SceneDelegate.swift */,
 				73AC7A0B2416BF460029D20B /* ViewController.swift */,
 				73AC7A0D2416BF460029D20B /* Main.storyboard */,
+				7357CE6E2419738800C21E1A /* frown.png */,
+				7357CE6F2419738800C21E1A /* smiley.png */,
 				73AC7A1B2416C9720029D20B /* SmileGestureRecognizer.swift */,
 				73AC7A1D2416D40A0029D20B /* FrownGestureRecognizer.swift */,
 				73AC7A102416BF470029D20B /* Assets.xcassets */,
@@ -131,8 +137,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7357CE702419738800C21E1A /* frown.png in Resources */,
 				73AC7A142416BF470029D20B /* LaunchScreen.storyboard in Resources */,
 				73AC7A112416BF470029D20B /* Assets.xcassets in Resources */,
+				7357CE712419738800C21E1A /* smiley.png in Resources */,
 				73AC7A0F2416BF460029D20B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

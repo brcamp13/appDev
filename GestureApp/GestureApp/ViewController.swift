@@ -35,19 +35,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(frownGestureRecognizer)
         
         // Make sure the label and images aren't visible
+        BottomLabel.text = ""
     }
     
     @objc func handleSmile(_ sender: SmileGestureRecognizer) {
         if sender.state == .ended {
             print("smile detected")
+        
             // Show the proper image and label
+            BottomImage.image = UIImage(named: "smiley.png")
+            BottomLabel.text = "Tastes good"
         }
     }
     
     @objc func handleFrown(_ sender: FrownGestureRecognizer) {
         if sender.state == .ended {
             print("frown detected")
+            
             // Show the proper image and label
+            BottomImage.image = UIImage(named: "frown.png")
+            BottomLabel.text = "Tastes bad"
         }
     }
 }
