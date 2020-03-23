@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,7 +12,7 @@
             <objects>
                 <tableViewController id="ZG4-o7-GMY" customClass="MainTableViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYa-4O-9RS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -68,6 +69,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H78-oS-anH">
                             <connections>
                                 <action selector="addFoodItemTapped:" destination="ZG4-o7-GMY" id="QUq-mv-hPR"/>
+                                <segue destination="DcR-hC-PW4" kind="show" id="Jxp-Ho-TRO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,6 +77,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTV-WH-hmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="110"/>
+        </scene>
+        <!--Add Food-->
+        <scene sceneID="Ow9-Gm-Lzx">
+            <objects>
+                <viewController id="DcR-hC-PW4" customClass="AddFoodViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s7v-H0-ib4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-aK-nxp">
+                                <rect key="frame" x="65" y="20" width="233" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="FG4-QY-cFw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qw5-aK-nxp" firstAttribute="top" secondItem="mDx-JG-HWd" secondAttribute="top" constant="20" id="JIU-IL-n5s"/>
+                            <constraint firstItem="mDx-JG-HWd" firstAttribute="trailing" secondItem="qw5-aK-nxp" secondAttribute="trailing" constant="77" id="gnL-kB-peP"/>
+                            <constraint firstItem="qw5-aK-nxp" firstAttribute="leading" secondItem="mDx-JG-HWd" secondAttribute="leading" constant="65" id="j6l-jv-UwX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mDx-JG-HWd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Food" prompt="Food App" id="Ztc-ek-dMs">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Tri-jw-m2K">
+                            <connections>
+                                <action selector="CancelButtonTapped:" destination="DcR-hC-PW4" id="bIC-rV-Slh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="baU-P8-Roy">
+                            <connections>
+                                <action selector="SaveButtonTapped:" destination="DcR-hC-PW4" id="3Uu-f6-y0Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="AddFoodTextField" destination="qw5-aK-nxp" id="WgA-Jl-ACD"/>
+                        <outlet property="CancelButton" destination="Tri-jw-m2K" id="CoK-rS-vkd"/>
+                        <outlet property="SaveButton" destination="baU-P8-Roy" id="w25-ci-Cuj"/>
+                        <segue destination="ZG4-o7-GMY" kind="show" identifier="SaveSegue" id="cJn-6L-ITv"/>
+                        <segue destination="ZG4-o7-GMY" kind="show" identifier="CancelSegue" id="7iC-Or-U0j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idH-rR-xq8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133.5999999999999" y="108.39580209895054"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lYC-Iw-awb">
@@ -93,4 +144,7 @@
             <point key="canvasLocation" x="-373" y="111"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cJn-6L-ITv"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,7 @@
 		0946D0F323F5352700290094 /* icecream.png in Resources */ = {isa = PBXBuildFile; fileRef = 0946D0F223F5352700290094 /* icecream.png */; };
 		0946D0F523F5354800290094 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 0946D0F423F5354800290094 /* food.png */; };
 		0946D0F723F5363400290094 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0946D0F623F5363400290094 /* FoodCell.swift */; };
+		73B7D7D824293E6000ABC894 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0946D0F223F5352700290094 /* icecream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecream.png; sourceTree = "<group>"; };
 		0946D0F423F5354800290094 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		0946D0F623F5363400290094 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				0946D0EA23F52D4300290094 /* FoodItem.swift */,
 				0946D0F623F5363400290094 /* FoodCell.swift */,
 				0946D0DA23F52A6400290094 /* Main.storyboard */,
+				73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */,
 				0946D0DD23F52A6500290094 /* Assets.xcassets */,
 				0946D0DF23F52A6500290094 /* LaunchScreen.storyboard */,
 				0946D0E223F52A6500290094 /* Info.plist */,
@@ -164,6 +167,7 @@
 				0946D0D523F52A6400290094 /* AppDelegate.swift in Sources */,
 				0946D0F723F5363400290094 /* FoodCell.swift in Sources */,
 				0946D0E923F52AE100290094 /* MainTableViewController.swift in Sources */,
+				73B7D7D824293E6000ABC894 /* AddFoodViewController.swift in Sources */,
 				0946D0D723F52A6400290094 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

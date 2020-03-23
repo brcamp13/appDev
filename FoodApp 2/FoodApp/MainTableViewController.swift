@@ -8,25 +8,43 @@
 
 import UIKit
 
+var foodItems = [FoodItem]()
+
 class MainTableViewController: UITableViewController {
     
-    var foodItems = [FoodItem]()
+    var newFoodText:String = ""
 
-    @IBAction func addFoodItemTapped(_ sender: UIBarButtonItem) {
-        let foodItem = FoodItem(name: "Food", imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
-        foodItems.append(foodItem)
-        tableView.reloadData()
-    }
+//    @IBAction func addFoodItemTapped(_ sender: UIBarButtonItem) {
+//        performSegue(withIdentifier: "secretPassage", sender: nil)
+//        let foodItem = FoodItem(name: "Food", imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
+//        foodItems.append(foodItem)
+//        tableView.reloadData()
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if newFoodText != "" {
+            let foodItem = FoodItem(name: newFoodText, imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
+            foodItems.append(foodItem)
+            newFoodText = ""
+            print(foodItems)
+            tableView.reloadData()
+        }
+        else if newFoodText == "NONE" {
+            print("Do nothing lol")
+        }
+        else {
+            initializeFoodItems()
+        }
+        
+        navigationItem.hidesBackButton = true
+        tableView.rowHeight = 58
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.rowHeight = 58
-        initializeFoodItems()
     }
     
     func initializeFoodItems() {
