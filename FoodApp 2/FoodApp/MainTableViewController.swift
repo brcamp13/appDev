@@ -22,6 +22,7 @@ class MainTableViewController: UITableViewController {
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        performSegue(withIdentifier: "FoodTableToMap", sender: nil)
         
         if newFoodText != "" {
             let foodItem = FoodItem(name: newFoodText, imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)

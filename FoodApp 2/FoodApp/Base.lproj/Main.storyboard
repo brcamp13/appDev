@@ -73,17 +73,52 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XlM-jf-MTL" kind="show" identifier="FoodTableToMap" id="1iL-U0-3a6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTV-WH-hmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="110"/>
+        </scene>
+        <!--Nearby Food-->
+        <scene sceneID="gkC-b8-hHH">
+            <objects>
+                <viewController id="XlM-jf-MTL" customClass="FoodMapViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="djG-fO-C7f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrq-Oi-bOR">
+                                <rect key="frame" x="43" y="75" width="288" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="pcJ-pF-KPQ"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="57r-6S-99P" firstAttribute="trailing" secondItem="jrq-Oi-bOR" secondAttribute="trailing" constant="44" id="A1y-Jh-ESv"/>
+                            <constraint firstItem="jrq-Oi-bOR" firstAttribute="top" secondItem="57r-6S-99P" secondAttribute="top" constant="75" id="B5a-8O-bDU"/>
+                            <constraint firstItem="jrq-Oi-bOR" firstAttribute="leading" secondItem="57r-6S-99P" secondAttribute="leading" constant="43" id="n2J-gk-gjQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="57r-6S-99P"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nearby Food" prompt="Food App" id="IcC-5p-yvn"/>
+                    <connections>
+                        <outlet property="mapView" destination="jrq-Oi-bOR" id="xcK-tH-W27"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMq-7W-PPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="802.848575712144"/>
         </scene>
         <!--Add Food-->
         <scene sceneID="Ow9-Gm-Lzx">
             <objects>
                 <viewController id="DcR-hC-PW4" customClass="AddFoodViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7v-H0-ib4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-aK-nxp">
@@ -145,6 +180,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cJn-6L-ITv"/>
+        <segue reference="7iC-Or-U0j"/>
     </inferredMetricsTieBreakers>
 </document>
