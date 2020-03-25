@@ -13,13 +13,26 @@ import MapKit
 class FoodMapViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
+    var labelName:String! = nil
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeLocation()
+        mapLabel.text = labelName
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        
+        //Zoom to user location
+        if let userLocation = locationManager.location?.coordinate {
+            let viewRegion = MKCoordinateRegion(center: userLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(viewRegion, animated: false)
+        }
+        
+        initializeLocation()
+        
+        // Find the food
         findFood()
     }
     
@@ -85,7 +98,7 @@ class FoodMapViewController: UIViewController, CLLocationManagerDelegate {
     
     func findFood() {
         let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = "pizza"
+        request.naturalLanguageQuery = self.labelName
         request.region = mapView.region
         let search = MKLocalSearch(request: request)
         search.start(completionHandler: searchHandler)

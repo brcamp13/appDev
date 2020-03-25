@@ -13,6 +13,7 @@ var foodItems = [FoodItem]()
 class MainTableViewController: UITableViewController {
     
     var newFoodText:String = ""
+    var selectedFoodName:String! = nil
 
 //    @IBAction func addFoodItemTapped(_ sender: UIBarButtonItem) {
 //        performSegue(withIdentifier: "secretPassage", sender: nil)
@@ -22,7 +23,6 @@ class MainTableViewController: UITableViewController {
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        performSegue(withIdentifier: "FoodTableToMap", sender: nil)
         
         if newFoodText != "" {
             let foodItem = FoodItem(name: newFoodText, imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
@@ -100,19 +100,29 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! FoodCell
         
         // Check if notifications are enabled
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings(completionHandler: { (settings) in
-            if settings.alertSetting == .enabled {
-                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-            } else {
-                print("Nothing is supposed to happen here lol")
-                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-            }
-        })
+//        let center = UNUserNotificationCenter.current()
+//        center.getNotificationSettings(completionHandler: { (settings) in
+//            if settings.alertSetting == .enabled {
+//                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
+//            } else {
+//                print("Nothing is supposed to happen here lol")
+//                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
+//            }
+//        })
+        
+        self.selectedFoodName = cell.foodNameLabel.text!
+        performSegue(withIdentifier: "FoodTableToMap", sender: nil)
         
         // If yes, then generate an alert asking the user if they would like to schedule a notification
         // Title: "Food Notification", message: Do you want to schedule a notification for <food item> with yes or no as choices
         // If no, nothing happens. If yes, item becomes red, notification scheduled for 5 seconds from now
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "FoodTableToMap") {
+            let mapVC = segue.destination as! FoodMapViewController
+            mapVC.labelName = selectedFoodName
+        }
     }
     
     func displaySchedulingAlert(cell: FoodCell, indexPath: IndexPath) {

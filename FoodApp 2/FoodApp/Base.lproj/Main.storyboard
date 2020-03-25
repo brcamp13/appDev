@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="ZG4-o7-GMY" customClass="MainTableViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYa-4O-9RS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -86,26 +86,35 @@
             <objects>
                 <viewController id="XlM-jf-MTL" customClass="FoodMapViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="djG-fO-C7f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrq-Oi-bOR">
-                                <rect key="frame" x="43" y="75" width="288" height="256"/>
+                                <rect key="frame" x="43" y="153" width="288" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="pcJ-pF-KPQ"/>
                                 </constraints>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-BZ-PwL">
+                                <rect key="frame" x="142" y="467" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="57r-6S-99P" firstAttribute="trailing" secondItem="jrq-Oi-bOR" secondAttribute="trailing" constant="44" id="A1y-Jh-ESv"/>
                             <constraint firstItem="jrq-Oi-bOR" firstAttribute="top" secondItem="57r-6S-99P" secondAttribute="top" constant="75" id="B5a-8O-bDU"/>
+                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="top" secondItem="jrq-Oi-bOR" secondAttribute="bottom" constant="58" id="cQm-Yj-zBf"/>
+                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="centerX" secondItem="djG-fO-C7f" secondAttribute="centerX" id="e4q-gw-E5a"/>
                             <constraint firstItem="jrq-Oi-bOR" firstAttribute="leading" secondItem="57r-6S-99P" secondAttribute="leading" constant="43" id="n2J-gk-gjQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="57r-6S-99P"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby Food" prompt="Food App" id="IcC-5p-yvn"/>
                     <connections>
+                        <outlet property="mapLabel" destination="CPL-BZ-PwL" id="Unb-AO-Snc"/>
                         <outlet property="mapView" destination="jrq-Oi-bOR" id="xcK-tH-W27"/>
                     </connections>
                 </viewController>
@@ -118,11 +127,11 @@
             <objects>
                 <viewController id="DcR-hC-PW4" customClass="AddFoodViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7v-H0-ib4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-aK-nxp">
-                                <rect key="frame" x="65" y="20" width="233" height="34"/>
+                                <rect key="frame" x="65" y="98" width="233" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="FG4-QY-cFw"/>
                                 </constraints>
@@ -180,6 +189,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7iC-Or-U0j"/>
+        <segue reference="Ig6-AF-8pW"/>
     </inferredMetricsTieBreakers>
 </document>
