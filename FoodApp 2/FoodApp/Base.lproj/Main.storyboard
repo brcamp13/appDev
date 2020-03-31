@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z61-Vq-MyT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z61-Vq-MyT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="404" y="110"/>
         </scene>
-        <!--Nearby Food-->
+        <!--Recipe-->
         <scene sceneID="gkC-b8-hHH">
             <objects>
                 <viewController id="XlM-jf-MTL" customClass="FoodMapViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,33 +89,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrq-Oi-bOR">
-                                <rect key="frame" x="43" y="153" width="288" height="256"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="pcJ-pF-KPQ"/>
-                                </constraints>
-                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-BZ-PwL">
-                                <rect key="frame" x="142" y="467" width="91" height="21"/>
+                                <rect key="frame" x="142" y="106" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5j-YV-TK8">
+                                <rect key="frame" x="67.5" y="177" width="240" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="2hH-an-EvB"/>
+                                    <constraint firstAttribute="width" constant="240" id="nYe-gf-Jh1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="57r-6S-99P" firstAttribute="trailing" secondItem="jrq-Oi-bOR" secondAttribute="trailing" constant="44" id="A1y-Jh-ESv"/>
-                            <constraint firstItem="jrq-Oi-bOR" firstAttribute="top" secondItem="57r-6S-99P" secondAttribute="top" constant="75" id="B5a-8O-bDU"/>
-                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="top" secondItem="jrq-Oi-bOR" secondAttribute="bottom" constant="58" id="cQm-Yj-zBf"/>
-                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="centerX" secondItem="djG-fO-C7f" secondAttribute="centerX" id="e4q-gw-E5a"/>
-                            <constraint firstItem="jrq-Oi-bOR" firstAttribute="leading" secondItem="57r-6S-99P" secondAttribute="leading" constant="43" id="n2J-gk-gjQ"/>
+                            <constraint firstItem="n5j-YV-TK8" firstAttribute="top" secondItem="CPL-BZ-PwL" secondAttribute="bottom" constant="50" id="5Yv-Xm-6RJ"/>
+                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="top" secondItem="57r-6S-99P" secondAttribute="top" constant="28" id="75q-bV-SUN"/>
+                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="centerX" secondItem="djG-fO-C7f" secondAttribute="centerX" id="QyF-EW-DQP"/>
+                            <constraint firstItem="57r-6S-99P" firstAttribute="trailing" secondItem="CPL-BZ-PwL" secondAttribute="trailing" constant="142" id="X0b-Cf-O7W"/>
+                            <constraint firstItem="n5j-YV-TK8" firstAttribute="centerX" secondItem="djG-fO-C7f" secondAttribute="centerX" id="b02-Au-ft1"/>
+                            <constraint firstItem="CPL-BZ-PwL" firstAttribute="leading" secondItem="57r-6S-99P" secondAttribute="leading" constant="142" id="gj8-XJ-e5p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="57r-6S-99P"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Nearby Food" prompt="Food App" id="IcC-5p-yvn"/>
+                    <navigationItem key="navigationItem" title="Recipe" prompt="Food App" id="IcC-5p-yvn"/>
                     <connections>
+                        <outlet property="foodImage" destination="n5j-YV-TK8" id="Nzf-3K-7Uk"/>
                         <outlet property="mapLabel" destination="CPL-BZ-PwL" id="Unb-AO-Snc"/>
-                        <outlet property="mapView" destination="jrq-Oi-bOR" id="xcK-tH-W27"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMq-7W-PPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
