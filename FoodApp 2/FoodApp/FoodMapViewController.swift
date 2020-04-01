@@ -20,7 +20,10 @@ class FoodMapViewController: UIViewController {
         super.viewDidLoad()
         self.recipeURLString = "https://api.spoonacular.com/recipes/search?query=" + self.labelName + "&apiKey=2662a85acb8641d0be58a7b67472316e"
         print(self.recipeURLString!)
-        mapLabel.text = labelName
+        mapLabel.numberOfLines = 0
+        mapLabel.lineBreakMode = .byWordWrapping
+        mapLabel.sizeToFit()
+        mapLabel.text = "No recipes found"
         self.getRecipe()
     }
     
@@ -75,10 +78,6 @@ class FoodMapViewController: UIViewController {
             print("error: invalid JSON data")
             return
         }
-        
-        print(jsonObj)
-        print(jsonDict1)
-        print(articleArray)
         
         // 6. Everything seems okay
         let imageUrl = "https://spoonacular.com/recipeImages/" + urlToImage
