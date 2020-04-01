@@ -18,7 +18,8 @@ class FoodMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.recipeURLString = "https://api.spoonacular.com/recipes/search?query=%3c" + self.labelName + "&apiKey=2662a85acb8641d0be58a7b67472316e"
+        self.recipeURLString = "https://api.spoonacular.com/recipes/search?query=" + self.labelName + "&apiKey=2662a85acb8641d0be58a7b67472316e"
+        print(self.recipeURLString!)
         mapLabel.text = labelName
         self.getRecipe()
     }
@@ -75,8 +76,13 @@ class FoodMapViewController: UIViewController {
             return
         }
         
+        print(jsonObj)
+        print(jsonDict1)
+        print(articleArray)
+        
         // 6. Everything seems okay
-        self.loadFoodImage(urlToImage)
+        let imageUrl = "https://spoonacular.com/recipeImages/" + urlToImage
+        self.loadFoodImage(imageUrl)
         DispatchQueue.main.async {
             self.mapLabel.text = titleStr
         }
