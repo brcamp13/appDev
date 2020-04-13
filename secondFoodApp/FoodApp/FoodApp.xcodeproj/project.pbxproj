@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7347E6BA2444F14D001EB565 /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7347E6B82444F14D001EB565 /* FoodModel.xcdatamodeld */; };
 		7381EC3523FC423B00257404 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381EC3423FC423B00257404 /* FoodCell.swift */; };
 		73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DAE23FB5F9700635863 /* AppDelegate.swift */; };
 		73AD2DB123FB5F9700635863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DB023FB5F9700635863 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7347E6B92444F14D001EB565 /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
 		7381EC3423FC423B00257404 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		73AD2DAB23FB5F9700635863 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AD2DAE23FB5F9700635863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				7381EC3423FC423B00257404 /* FoodCell.swift */,
 				73AD2DC823FB69FE00635863 /* genericFood.jpg */,
 				73AD2DCA23FB6A0400635863 /* pasta.jpg */,
+				7347E6B82444F14D001EB565 /* FoodModel.xcdatamodeld */,
 				73AD2DC223FB615C00635863 /* TableViewController.swift */,
 				73AD2DC623FB69F500635863 /* chicken.jpg */,
 				73AD2DCC23FB6A0900635863 /* sushi.jpg */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AD2DC523FB641B00635863 /* FoodItem.swift in Sources */,
+				7347E6BA2444F14D001EB565 /* FoodModel.xcdatamodeld in Sources */,
 				73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */,
 				73E4880124046B4600DFCCA9 /* SettingsTableViewController.swift in Sources */,
 				7381EC3523FC423B00257404 /* FoodCell.swift in Sources */,
@@ -366,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7347E6B82444F14D001EB565 /* FoodModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7347E6B92444F14D001EB565 /* FoodModel.xcdatamodel */,
+			);
+			currentVersion = 7347E6B92444F14D001EB565 /* FoodModel.xcdatamodel */;
+			path = FoodModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 73AD2DA323FB5F9700635863 /* Project object */;
 }

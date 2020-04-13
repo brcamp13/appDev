@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  FoodApp
+//  NotUsingThis
 //
-//  Created by Brandon Campbell on 2/17/20.
+//  Created by Brandon Campbell on 4/13/20.
 //  Copyright © 2020 Brandon Campbell. All rights reserved.
 //
 
@@ -16,15 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        if (UserDefaults.standard.object(forKey: "sortItems") == nil) {
-            UserDefaults.standard.set(true, forKey: "sortItems")
-        }
-        
-        if (UserDefaults.standard.object(forKey: "genericFood") == nil) {
-            UserDefaults.standard.set("Food", forKey: "genericFood")
-        }
-        
         return true
     }
 
@@ -41,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
+
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -51,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "FoodApp")
+        let container = NSPersistentContainer(name: "NotUsingThis")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -86,7 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 
 }
 
