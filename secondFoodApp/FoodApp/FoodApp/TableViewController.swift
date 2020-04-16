@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     var foods = [(FoodModel, Int)]()
     var genericFoodName: String?
     
-    var foodOptions = [("chicken", "chicken.jpg"), ("sushi", "sushi.jpg"), ("pasta", "pasta.jpg"), ("lettuce", "lettuce.jpg"), ("ice cream", "iceCream.jpg")]
+    var foodOptions = [("chicken", "chickenn.jpg"), ("sushii", "sushi.jpg"), ("pasta", "pastaa.jpg"), ("lettuce", "lettuce.jpg"), ("ice cream", "iceCream.jpg")]
     
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
@@ -69,6 +69,8 @@ class TableViewController: UITableViewController {
     func initialize() {
         // self.foods.append((pasta, foods.count))
         tableView.rowHeight = 58
+        updateFoodArray()
+        tableView.reloadData()
     }
     
     func removeFood(_ food: FoodModel) {
@@ -78,7 +80,7 @@ class TableViewController: UITableViewController {
     
     func addFood(name: String, imageFileName: String, calories: Int) {
         let food = NSEntityDescription.insertNewObject(forEntityName:
-        "Food", into: self.managedObjectContext)
+        "FoodModel", into: self.managedObjectContext)
         food.setValue(name, forKey: "name")
         food.setValue(imageFileName, forKey: "imageFileName")
         food.setValue(calories, forKey: "calories")
@@ -86,7 +88,7 @@ class TableViewController: UITableViewController {
     }
     
     func getFood() -> [NSManagedObject] {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Food")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FoodModel")
         var food: [NSManagedObject] = []
         do {
             food = try self.managedObjectContext.fetch(fetchRequest)
