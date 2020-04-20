@@ -12,10 +12,37 @@ import GameplayKit
 class GameScene: SKScene {
     
     private var label : SKLabelNode?
+    private var scoreLabel: SKLabelNode?
+    private var missesLeftLabel: SKLabelNode?
+    private var startLabel: SKLabelNode?
+    private var gameOverLabel: SKLabelNode?
+    private var yourScoreLabel: SKLabelNode?
+    private var groceryBagSprite: SKSpriteNode?
     private var spinnyNode : SKShapeNode?
+    
+    var gameTimer: Timer!
+    var gameRunning = false
     
     
     override func didMove(to view: SKView) {
+        
+        // Access all game UI elements
+        self.scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
+        self.missesLeftLabel = self.childNode(withName: "missesLeftLabel") as? SKLabelNode
+        self.startLabel = self.childNode(withName: "startLabel") as? SKLabelNode
+        self.gameOverLabel = self.childNode(withName: "gameOverLabel") as? SKLabelNode
+        self.yourScoreLabel = self.childNode(withName: "yourScoreLabel") as? SKLabelNode
+        self.groceryBagSprite = self.childNode(withName: "groceryBag") as? SKSpriteNode
+        
+        // Hide elements
+        self.gameOverLabel?.isHidden = true
+        self.yourScoreLabel?.isHidden = true
+        self.groceryBagSprite?.isHidden = true
+        
+        // Start game timer
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateGame)
+        gameRunning = true
+        
         
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
@@ -38,6 +65,11 @@ class GameScene: SKScene {
         }
     }
     
+    func updateGame (timer: Timer) {
+        print("Timer tick lol")
+        
+        // Randomly select food image, create sprite, place randomly on upper half of screen
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
