@@ -15,6 +15,12 @@
 		7370627B244E3E1200FA44DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73706279244E3E1200FA44DD /* Main.storyboard */; };
 		7370627D244E3E1300FA44DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7370627C244E3E1300FA44DD /* Assets.xcassets */; };
 		73706280244E3E1300FA44DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7370627E244E3E1300FA44DD /* LaunchScreen.storyboard */; };
+		7370628D244E4CFC00FA44DD /* groceryBag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73706287244E4CFB00FA44DD /* groceryBag.jpg */; };
+		7370628E244E4CFC00FA44DD /* sushii.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73706288244E4CFB00FA44DD /* sushii.jpg */; };
+		7370628F244E4CFC00FA44DD /* lettuce.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73706289244E4CFB00FA44DD /* lettuce.jpg */; };
+		73706290244E4CFC00FA44DD /* chickenn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7370628A244E4CFC00FA44DD /* chickenn.jpg */; };
+		73706291244E4CFC00FA44DD /* iceCream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7370628B244E4CFC00FA44DD /* iceCream.jpg */; };
+		73706292244E4CFC00FA44DD /* pastaa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7370628C244E4CFC00FA44DD /* pastaa.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		7370627C244E3E1300FA44DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7370627F244E3E1300FA44DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73706281244E3E1300FA44DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73706287244E4CFB00FA44DD /* groceryBag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = groceryBag.jpg; path = ../../groceryBag.jpg; sourceTree = "<group>"; };
+		73706288244E4CFB00FA44DD /* sushii.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushii.jpg; path = ../../sushii.jpg; sourceTree = "<group>"; };
+		73706289244E4CFB00FA44DD /* lettuce.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lettuce.jpg; path = ../../lettuce.jpg; sourceTree = "<group>"; };
+		7370628A244E4CFC00FA44DD /* chickenn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chickenn.jpg; path = ../../chickenn.jpg; sourceTree = "<group>"; };
+		7370628B244E4CFC00FA44DD /* iceCream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iceCream.jpg; path = ../../iceCream.jpg; sourceTree = "<group>"; };
+		7370628C244E4CFC00FA44DD /* pastaa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pastaa.jpg; path = ../../pastaa.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,12 @@
 				7370626F244E3E1200FA44DD /* AppDelegate.swift */,
 				73706271244E3E1200FA44DD /* GameScene.sks */,
 				73706273244E3E1200FA44DD /* Actions.sks */,
+				7370628A244E4CFC00FA44DD /* chickenn.jpg */,
+				73706287244E4CFB00FA44DD /* groceryBag.jpg */,
+				7370628B244E4CFC00FA44DD /* iceCream.jpg */,
+				73706289244E4CFB00FA44DD /* lettuce.jpg */,
+				7370628C244E4CFC00FA44DD /* pastaa.jpg */,
+				73706288244E4CFB00FA44DD /* sushii.jpg */,
 				73706275244E3E1200FA44DD /* GameScene.swift */,
 				73706277244E3E1200FA44DD /* GameViewController.swift */,
 				73706279244E3E1200FA44DD /* Main.storyboard */,
@@ -131,8 +149,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7370628F244E4CFC00FA44DD /* lettuce.jpg in Resources */,
 				7370627B244E3E1200FA44DD /* Main.storyboard in Resources */,
+				73706290244E4CFC00FA44DD /* chickenn.jpg in Resources */,
+				7370628E244E4CFC00FA44DD /* sushii.jpg in Resources */,
 				73706272244E3E1200FA44DD /* GameScene.sks in Resources */,
+				7370628D244E4CFC00FA44DD /* groceryBag.jpg in Resources */,
+				73706292244E4CFC00FA44DD /* pastaa.jpg in Resources */,
+				73706291244E4CFC00FA44DD /* iceCream.jpg in Resources */,
 				7370627D244E3E1300FA44DD /* Assets.xcassets in Resources */,
 				73706280244E3E1300FA44DD /* LaunchScreen.storyboard in Resources */,
 				73706274244E3E1200FA44DD /* Actions.sks in Resources */,
