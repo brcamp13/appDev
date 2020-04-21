@@ -23,6 +23,8 @@ class GameScene: SKScene {
     var gameTimer: Timer!
     var gameRunning = false
     
+    var foodImagePaths = ["chickenn.jpg", "iceCream.jpg", "lettuce.jpg", "pastaa.jpg", "sushii.jpg"]
+    
     
     override func didMove(to view: SKView) {
         
@@ -69,6 +71,18 @@ class GameScene: SKScene {
         print("Timer tick lol")
         
         // Randomly select food image, create sprite, place randomly on upper half of screen
+        let foodImagePath = self.foodImagePaths.randomElement()!
+        var foodNode: SKSpriteNode
+        foodNode = SKSpriteNode(imageNamed: foodImagePath)
+        foodNode.name = "Food"
+        foodNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: foodNode.frame.width, height: foodNode.frame.width))
+        foodNode.physicsBody?.contactTestBitMask = 1
+        let width = self.view!.frame.width
+        let height = self.view!.frame.height
+        let x = Int.random(in: -Int(width)/2 ..< Int(width))
+        let y = Int.random(in: 0 ..< Int(height))
+        foodNode.position = CGPoint(x: x, y: y)
+        self.addChild(foodNode)
     }
     
     func touchDown(atPoint pos : CGPoint) {
