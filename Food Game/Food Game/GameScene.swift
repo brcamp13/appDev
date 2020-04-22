@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     private var scoreLabel: SKLabelNode?
@@ -22,6 +22,8 @@ class GameScene: SKScene {
     
     var gameTimer: Timer!
     var gameRunning = false
+    var score = 0
+    var missesLeft = 0
     
     var foodImagePaths = ["chickenn.jpg", "iceCream.jpg", "lettuce.jpg", "pastaa.jpg", "sushii.jpg"]
     
@@ -45,26 +47,8 @@ class GameScene: SKScene {
         gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateGame)
         gameRunning = true
         
+        physicsWorld.contactDelegate = self
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
     }
     
     func updateGame (timer: Timer) {
@@ -83,6 +67,41 @@ class GameScene: SKScene {
         let y = Int.random(in: 0 ..< Int(height))
         foodNode.position = CGPoint(x: x, y: y)
         self.addChild(foodNode)
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+
+        if (nodeA.name == "groceryBag" && nodeB.name == "food") || (nodeA.name == "food" && nodeB.name == "groceryBag")  {
+            self.score += 1
+            scoreLabel?.text = "Score: " + String(self.score)
+        }
+        
+        if (nodeA.name == "Wall" && nodeB.name == "food") || (nodeA.name == "food" && nodeB.name == "Wall")  {
+            self.missesLeft -= 1
+            missesLeftLabel?.text = "Misses Left: : " + String(self.missesLeft)
+            if nodeA.name == "food" {
+                nodeA.removeFromParent()
+            } else {
+                nodeB.removeFromParent()
+            }
+        }
+        
+        if self.missesLeft == 0 {
+            self.gameTimer.invalidate()
+            gameRunning = false
+            gameOverLabel?.isHidden = false
+            startLabel?.isHidden = false
+            yourScoreLabel?.isHidden = false
+            
+            // Remove all of the food nodes
+            for child in self.children {
+                if child.name == "food" {
+                    child.removeFromParent()
+                }
+            }
+        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
