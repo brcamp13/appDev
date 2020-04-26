@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     var foods = [(FoodModel, Int)]()
     var genericFoodName: String?
     
-    var foodOptions = [("chicken", "chickenn.jpg"), ("sushii", "sushi.jpg"), ("pasta", "pastaa.jpg"), ("lettuce", "lettuce.jpg"), ("ice cream", "iceCream.jpg")]
+    var foodOptions = [("chicken", "chicken.jpg"), ("sushi", "sushi.jpg"), ("pasta", "pasta.jpg"), ("lettuce", "lettuce.jpg"), ("ice cream", "iceCream.jpg")]
     
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!

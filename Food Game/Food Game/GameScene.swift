@@ -43,11 +43,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.yourScoreLabel?.isHidden = true
         self.groceryBagSprite?.isHidden = true
         
-        // Start game timer
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateGame)
-        gameRunning = true
-        
         physicsWorld.contactDelegate = self
+        
+        let bottomWall = SKSpriteNode(color: UIColor.clear, size: CGSize(width: 500, height: 10))
+        bottomWall.position = CGPoint(x: 150, y: -5)
+        bottomWall.physicsBody = SKPhysicsBody(rectangleOf: bottomWall.size)
+        bottomWall.physicsBody!.isDynamic = true
+        bottomWall.name = "wall"
+        self.addChild(bottomWall)
         
     }
     
@@ -58,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let foodImagePath = self.foodImagePaths.randomElement()!
         var foodNode: SKSpriteNode
         foodNode = SKSpriteNode(imageNamed: foodImagePath)
-        foodNode.name = "Food"
+        foodNode.name = "food"
         foodNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: foodNode.frame.width, height: foodNode.frame.width))
         foodNode.physicsBody?.contactTestBitMask = 1
         let width = self.view!.frame.width
@@ -72,13 +75,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
+        
+        print("here")
 
         if (nodeA.name == "groceryBag" && nodeB.name == "food") || (nodeA.name == "food" && nodeB.name == "groceryBag")  {
             self.score += 1
             scoreLabel?.text = "Score: " + String(self.score)
         }
         
-        if (nodeA.name == "Wall" && nodeB.name == "food") || (nodeA.name == "food" && nodeB.name == "Wall")  {
+        if (nodeA.name == "wall" && nodeB.name == "food") || (nodeA.name == "food" && nodeB.name == "wall")  {
             self.missesLeft -= 1
             missesLeftLabel?.text = "Misses Left: : " + String(self.missesLeft)
             if nodeA.name == "food" {
@@ -129,27 +134,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+        for touch in touches {
+            let point = touch.location(in: self)
+            let nodeArray = nodes(at: point)
+            for node in nodeArray {
+                if node.name == "startLabel" {
+                    self.score = 0
+                    self.missesLeft = 10
+                    self.startLabel?.isHidden = true
+                    self.yourScoreLabel?.isHidden = true
+                    self.gameOverLabel?.isHidden = true
+                    self.scoreLabel?.isHidden = false
+                    self.missesLeftLabel?.isHidden = false
+                    
+                    self.scoreLabel?.text = "Score: " + String(self.score)
+                    self.missesLeftLabel?.text = "Misses Left: " + String(self.missesLeft)
+                    
+                    self.groceryBagSprite?.isHidden = false
+                    
+                    // Start game timer
+                    gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateGame)
+                    gameRunning = true
+                } else if node.name == "groceryBag" {
+                    node.position.x = point.x
+                }
+            }
         }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        for touch in touches {
+            let point = touch.location(in: self)
+            self.groceryBagSprite?.position.x = point.x
+        }
     }
 }

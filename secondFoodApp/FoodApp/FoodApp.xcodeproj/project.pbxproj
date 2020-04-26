@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73444D5F2447F05F00D2AA7E /* iceCream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73444D5A2447F05F00D2AA7E /* iceCream.jpg */; };
-		73444D622447F05F00D2AA7E /* lettuce.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73444D5D2447F05F00D2AA7E /* lettuce.jpg */; };
-		73444D672447F0EA00D2AA7E /* sushii.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73444D642447F0EA00D2AA7E /* sushii.jpg */; };
-		73444D682447F0EA00D2AA7E /* pastaa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73444D652447F0EA00D2AA7E /* pastaa.jpg */; };
-		73444D692447F0EA00D2AA7E /* chickenn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73444D662447F0EA00D2AA7E /* chickenn.jpg */; };
 		7347E6BA2444F14D001EB565 /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7347E6B82444F14D001EB565 /* FoodModel.xcdatamodeld */; };
+		7357192A2450ED88001E421A /* pasta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719242450ED88001E421A /* pasta.jpg */; };
+		7357192B2450ED88001E421A /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719252450ED88001E421A /* sushi.jpg */; };
+		7357192C2450ED88001E421A /* lettuce.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719262450ED88001E421A /* lettuce.jpg */; };
+		7357192D2450ED88001E421A /* chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719272450ED88001E421A /* chicken.jpg */; };
+		7357192E2450ED88001E421A /* iceCream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719282450ED88001E421A /* iceCream.jpg */; };
+		7357192F2450ED88001E421A /* genericFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 735719292450ED88001E421A /* genericFood.jpg */; };
 		7381EC3523FC423B00257404 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381EC3423FC423B00257404 /* FoodCell.swift */; };
 		73AD2DAF23FB5F9700635863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DAE23FB5F9700635863 /* AppDelegate.swift */; };
 		73AD2DB123FB5F9700635863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DB023FB5F9700635863 /* SceneDelegate.swift */; };
@@ -20,19 +21,17 @@
 		73AD2DB823FB5F9800635863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DB723FB5F9800635863 /* Assets.xcassets */; };
 		73AD2DBB23FB5F9800635863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DB923FB5F9800635863 /* LaunchScreen.storyboard */; };
 		73AD2DC323FB615C00635863 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD2DC223FB615C00635863 /* TableViewController.swift */; };
-		73AD2DC723FB69F500635863 /* chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DC623FB69F500635863 /* chicken.jpg */; };
-		73AD2DC923FB69FE00635863 /* genericFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DC823FB69FE00635863 /* genericFood.jpg */; };
-		73AD2DCD23FB6A0900635863 /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73AD2DCC23FB6A0900635863 /* sushi.jpg */; };
 		73E4880124046B4600DFCCA9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		73444D5A2447F05F00D2AA7E /* iceCream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iceCream.jpg; path = ../../../iceCream.jpg; sourceTree = "<group>"; };
-		73444D5D2447F05F00D2AA7E /* lettuce.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lettuce.jpg; path = ../../../lettuce.jpg; sourceTree = "<group>"; };
-		73444D642447F0EA00D2AA7E /* sushii.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushii.jpg; path = ../../../sushii.jpg; sourceTree = "<group>"; };
-		73444D652447F0EA00D2AA7E /* pastaa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pastaa.jpg; path = ../../../pastaa.jpg; sourceTree = "<group>"; };
-		73444D662447F0EA00D2AA7E /* chickenn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chickenn.jpg; path = ../../../chickenn.jpg; sourceTree = "<group>"; };
 		7347E6B92444F14D001EB565 /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
+		735719242450ED88001E421A /* pasta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pasta.jpg; path = ../../pasta.jpg; sourceTree = "<group>"; };
+		735719252450ED88001E421A /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushi.jpg; path = ../../sushi.jpg; sourceTree = "<group>"; };
+		735719262450ED88001E421A /* lettuce.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lettuce.jpg; path = ../../lettuce.jpg; sourceTree = "<group>"; };
+		735719272450ED88001E421A /* chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chicken.jpg; path = ../../chicken.jpg; sourceTree = "<group>"; };
+		735719282450ED88001E421A /* iceCream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iceCream.jpg; path = ../../iceCream.jpg; sourceTree = "<group>"; };
+		735719292450ED88001E421A /* genericFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = genericFood.jpg; path = ../../genericFood.jpg; sourceTree = "<group>"; };
 		7381EC3423FC423B00257404 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		73AD2DAB23FB5F9700635863 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AD2DAE23FB5F9700635863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,9 +41,6 @@
 		73AD2DBA23FB5F9800635863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73AD2DBC23FB5F9800635863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AD2DC223FB615C00635863 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		73AD2DC623FB69F500635863 /* chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chicken.jpg; path = ../../chicken.jpg; sourceTree = "<group>"; };
-		73AD2DC823FB69FE00635863 /* genericFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = genericFood.jpg; path = ../../genericFood.jpg; sourceTree = "<group>"; };
-		73AD2DCC23FB6A0900635863 /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sushi.jpg; path = ../../sushi.jpg; sourceTree = "<group>"; };
 		73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,16 +79,14 @@
 				73AD2DB423FB5F9700635863 /* Main.storyboard */,
 				73E4880024046B4600DFCCA9 /* SettingsTableViewController.swift */,
 				7381EC3423FC423B00257404 /* FoodCell.swift */,
-				73AD2DC823FB69FE00635863 /* genericFood.jpg */,
-				73444D662447F0EA00D2AA7E /* chickenn.jpg */,
-				73444D652447F0EA00D2AA7E /* pastaa.jpg */,
-				73444D642447F0EA00D2AA7E /* sushii.jpg */,
-				73444D5A2447F05F00D2AA7E /* iceCream.jpg */,
-				73444D5D2447F05F00D2AA7E /* lettuce.jpg */,
 				7347E6B82444F14D001EB565 /* FoodModel.xcdatamodeld */,
+				735719272450ED88001E421A /* chicken.jpg */,
+				735719292450ED88001E421A /* genericFood.jpg */,
+				735719282450ED88001E421A /* iceCream.jpg */,
+				735719262450ED88001E421A /* lettuce.jpg */,
+				735719242450ED88001E421A /* pasta.jpg */,
+				735719252450ED88001E421A /* sushi.jpg */,
 				73AD2DC223FB615C00635863 /* TableViewController.swift */,
-				73AD2DC623FB69F500635863 /* chicken.jpg */,
-				73AD2DCC23FB6A0900635863 /* sushi.jpg */,
 				73AD2DB723FB5F9800635863 /* Assets.xcassets */,
 				73AD2DB923FB5F9800635863 /* LaunchScreen.storyboard */,
 				73AD2DBC23FB5F9800635863 /* Info.plist */,
@@ -158,17 +152,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73AD2DC923FB69FE00635863 /* genericFood.jpg in Resources */,
+				7357192D2450ED88001E421A /* chicken.jpg in Resources */,
 				73AD2DBB23FB5F9800635863 /* LaunchScreen.storyboard in Resources */,
-				73444D692447F0EA00D2AA7E /* chickenn.jpg in Resources */,
-				73444D672447F0EA00D2AA7E /* sushii.jpg in Resources */,
+				7357192A2450ED88001E421A /* pasta.jpg in Resources */,
 				73AD2DB823FB5F9800635863 /* Assets.xcassets in Resources */,
-				73444D622447F05F00D2AA7E /* lettuce.jpg in Resources */,
+				7357192E2450ED88001E421A /* iceCream.jpg in Resources */,
+				7357192F2450ED88001E421A /* genericFood.jpg in Resources */,
 				73AD2DB623FB5F9700635863 /* Main.storyboard in Resources */,
-				73444D682447F0EA00D2AA7E /* pastaa.jpg in Resources */,
-				73444D5F2447F05F00D2AA7E /* iceCream.jpg in Resources */,
-				73AD2DCD23FB6A0900635863 /* sushi.jpg in Resources */,
-				73AD2DC723FB69F500635863 /* chicken.jpg in Resources */,
+				7357192C2450ED88001E421A /* lettuce.jpg in Resources */,
+				7357192B2450ED88001E421A /* sushi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
