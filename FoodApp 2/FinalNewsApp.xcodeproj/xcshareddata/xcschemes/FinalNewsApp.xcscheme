@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0946D0D023F52A6400290094"
-               BuildableName = "FoodApp.app"
-               BlueprintName = "FoodApp"
-               ReferencedContainer = "container:FoodApp.xcodeproj">
+               BuildableName = "FinalNewsApp.app"
+               BlueprintName = "FinalNewsApp"
+               ReferencedContainer = "container:FinalNewsApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0946D0D023F52A6400290094"
-            BuildableName = "FoodApp.app"
-            BlueprintName = "FoodApp"
-            ReferencedContainer = "container:FoodApp.xcodeproj">
+            BuildableName = "FinalNewsApp.app"
+            BlueprintName = "FinalNewsApp"
+            ReferencedContainer = "container:FinalNewsApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0946D0D023F52A6400290094"
-            BuildableName = "FoodApp.app"
-            BlueprintName = "FoodApp"
-            ReferencedContainer = "container:FoodApp.xcodeproj">
+            BuildableName = "FinalNewsApp.app"
+            BlueprintName = "FinalNewsApp"
+            ReferencedContainer = "container:FinalNewsApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
