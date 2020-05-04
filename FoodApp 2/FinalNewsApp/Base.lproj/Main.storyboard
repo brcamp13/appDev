@@ -146,32 +146,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Whr-6E-6Gb">
-                                            <rect key="frame" x="16" y="3.5" width="78" height="57"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="78" id="YQG-YM-bP4"/>
-                                                <constraint firstAttribute="height" constant="57" id="vQf-gu-LjH"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-We-vc6">
-                                            <rect key="frame" x="134" y="22" width="207" height="20.5"/>
+                                            <rect key="frame" x="8" y="24" width="351" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="207" id="jet-ej-a11"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="351" id="ybg-FD-MyW"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5Le-We-vc6" firstAttribute="leading" secondItem="Whr-6E-6Gb" secondAttribute="trailing" constant="40" id="6w6-WG-Lh5"/>
-                                        <constraint firstItem="5Le-We-vc6" firstAttribute="centerY" secondItem="4cy-NA-ruk" secondAttribute="centerY" id="Kmc-4f-Vf4"/>
-                                        <constraint firstItem="Whr-6E-6Gb" firstAttribute="centerY" secondItem="4cy-NA-ruk" secondAttribute="centerY" id="jgd-Ne-Bgm"/>
-                                        <constraint firstItem="Whr-6E-6Gb" firstAttribute="leading" secondItem="4cy-NA-ruk" secondAttribute="leading" constant="16" id="xZe-PC-cs2"/>
+                                        <constraint firstItem="5Le-We-vc6" firstAttribute="centerY" secondItem="4cy-NA-ruk" secondAttribute="centerY" id="AOt-bI-nLJ"/>
+                                        <constraint firstItem="5Le-We-vc6" firstAttribute="leading" secondItem="4cy-NA-ruk" secondAttribute="leading" constant="8" id="GDl-A6-cr7"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Le-We-vc6" secondAttribute="trailing" constant="16" id="R2a-m3-jI8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="articleImageView" destination="Whr-6E-6Gb" id="fNQ-gb-422"/>
                                     <outlet property="articleLabel" destination="5Le-We-vc6" id="AIF-Ud-SD1"/>
                                 </connections>
                             </tableViewCell>

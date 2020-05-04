@@ -97,6 +97,8 @@ class NewsArticlesTableViewController: UITableViewController {
         }
     }
     
+    
+    // OKAY, SO PUT THIS IN THE ARTICLE DETAIL VIEW AND JUST SAVE THE IMAGE URL AND CALL THIS ONCE YOU LOAD THE DETAILED VIEW OF THE ARTICLE...... NOT ON LIST, JUST HAVE TITLES
     func loadNewsImage(_ urlString: String) {
         // URL comes from API response; definitely needs some safety checks
         if let urlStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
@@ -129,7 +131,6 @@ class NewsArticlesTableViewController: UITableViewController {
             // Configure the cell...
             let article = articles[indexPath.row]
             loadNewsImage(article.imageUrl)
-            cell.articleImageView?.image = self.image
             cell.articleLabel?.text = article.title
 
             return cell
