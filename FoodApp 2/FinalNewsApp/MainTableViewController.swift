@@ -111,7 +111,7 @@ class MainTableViewController: UITableViewController {
 //        })
         
         self.selectedFoodName = cell.foodNameLabel.text!
-        performSegue(withIdentifier: "FoodTableToMap", sender: nil)
+        performSegue(withIdentifier: "TopicTableToArticles", sender: nil)
         
         // If yes, then generate an alert asking the user if they would like to schedule a notification
         // Title: "Food Notification", message: Do you want to schedule a notification for <food item> with yes or no as choices
@@ -119,9 +119,9 @@ class MainTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "FoodTableToMap") {
-            let mapVC = segue.destination as! FoodMapViewController
-            mapVC.labelName = selectedFoodName
+        if (segue.identifier == "TopicTableToArticles") {
+            let articlesVC = segue.destination as! NewsArticlesTableViewController
+            articlesVC.topicName = selectedFoodName
         }
     }
     
