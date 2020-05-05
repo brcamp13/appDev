@@ -9,11 +9,11 @@
 import Foundation
 
 class Article {
-    var author: String
-    var title: String
-    var imageUrl: String
-    var articleUrl: String
-    var id: String
+    var author: String?
+    var title: String?
+    var imageUrl: String?
+    var articleUrl: String?
+    var id: String?
 
     init(author: String, title: String, imageUrl: String, articleUrl: String) {
         self.author = author

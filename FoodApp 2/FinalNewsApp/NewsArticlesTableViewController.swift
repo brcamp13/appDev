@@ -17,6 +17,7 @@ class NewsArticlesTableViewController: UITableViewController {
     var newsURLString:String! = nil
     var apiKey = "7378f52d4d104cc2bbd1c2c916ee3e1a"
     var image:UIImage! = nil
+    var selectedArticle:Article! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +89,7 @@ class NewsArticlesTableViewController: UITableViewController {
         // articleArray should have all of the news articles for the topic, so go through and add them as table cells somehow
         
         for item in articleArray {
-            let article = Article(author: item["author"] as! String, title: item["title"] as! String, imageUrl: item["urlToImage"] as! String, articleUrl: item["url"] as! String)
+            let article = Article(author: item["author"] as? String ?? "Null author", title: item["title"] as? String ?? "Null title", imageUrl: item["urlToImage"] as? String ?? "https://lh3.googleusercontent.com/proxy/ta8LgzcUCtO9utHsGF05HOIDAIyeAlAT4AGXDRVJnZpIvidqT4fYDpyVrvwCQpe35kp7uNbBLd53uDFzvKmQtHsUXXA4_iNXJC4W2rIs5-TO_R5NlTEK5w", articleUrl: item["url"] as? String ?? "https://www.google.com/")
             articles.append(article)
         }
         
@@ -96,24 +97,6 @@ class NewsArticlesTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
-    
-    // OKAY, SO PUT THIS IN THE ARTICLE DETAIL VIEW AND JUST SAVE THE IMAGE URL AND CALL THIS ONCE YOU LOAD THE DETAILED VIEW OF THE ARTICLE...... NOT ON LIST, JUST HAVE TITLES
-    func loadNewsImage(_ urlString: String) {
-        // URL comes from API response; definitely needs some safety checks
-        if let urlStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            if let url = URL(string: urlStr) {
-                let dataTask = URLSession.shared.dataTask(with: url,
-                completionHandler: {(data, response, error) -> Void in
-                    if let imageData = data {
-                        self.image = UIImage(data: imageData)
-                    }
-                })
-                dataTask.resume()
-            }
-        }
-   }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
@@ -130,7 +113,6 @@ class NewsArticlesTableViewController: UITableViewController {
 
             // Configure the cell...
             let article = articles[indexPath.row]
-            loadNewsImage(article.imageUrl)
             cell.articleLabel?.text = article.title
 
             return cell
@@ -142,35 +124,21 @@ class NewsArticlesTableViewController: UITableViewController {
             return true
         }
         
-//        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            let cell = tableView.cellForRow(at: indexPath) as! NewsArticleCell
-//
-//            // Check if notifications are enabled
-//    //        let center = UNUserNotificationCenter.current()
-//    //        center.getNotificationSettings(completionHandler: { (settings) in
-//    //            if settings.alertSetting == .enabled {
-//    //                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-//    //            } else {
-//    //                print("Nothing is supposed to happen here lol")
-//    //                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-//    //            }
-//    //        })
-//
-//            // Do the segue to the article detail page
-////            self.selectedFoodName = cell.articleLabel.text!
-////            performSegue(withIdentifier: "TopicTableToArticles", sender: nil)
-//
-//            // If yes, then generate an alert asking the user if they would like to schedule a notification
-//            // Title: "Food Notification", message: Do you want to schedule a notification for <food item> with yes or no as choices
-//            // If no, nothing happens. If yes, item becomes red, notification scheduled for 5 seconds from now
-//        }
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            // Do the segue to the article detail page
+            self.selectedArticle = articles[indexPath.row]
+            performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
+
+     
+        }
         
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if (segue.identifier == "TopicTableToArticles") {
-//                let articlesVC = segue.destination as! NewsArticlesTableViewController
-//                articlesVC.topicName = selectedFoodName
-//            }
-//        }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "ShowArticleDetails") {
+                let articlesVC = segue.destination as! ArticleDetailViewController
+                articlesVC.article = self.selectedArticle
+            }
+        }
     
 
     /*

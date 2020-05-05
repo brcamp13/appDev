@@ -175,7 +175,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Gew-OO-Afm"/>
                     <connections>
-                        <segue destination="elD-0H-FA7" kind="show" identifier="showArticleDetail" id="laX-RV-CxJ"/>
+                        <segue destination="elD-0H-FA7" kind="show" identifier="ShowArticleDetails" id="laX-RV-CxJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clF-Rg-gXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -218,6 +218,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieW-Tz-zKw">
                                 <rect key="frame" x="164" y="483" width="36" height="30"/>
                                 <state key="normal" title="More"/>
+                                <connections>
+                                    <action selector="moreButtonClick:" destination="elD-0H-FA7" eventType="touchUpInside" id="6D7-Of-yhh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

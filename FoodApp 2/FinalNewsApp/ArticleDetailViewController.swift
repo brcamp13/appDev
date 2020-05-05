@@ -16,12 +16,36 @@ class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var articleContentView: UILabel!
     @IBOutlet weak var moreButton: UIButton!
     
+    var article:Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.titleLabel.text = self.article?.title
+        loadNewsImage(self.article!.imageUrl!)
+        self.articleContentView.text = self.article?.author
     }
+    
+    
+    @IBAction func moreButtonClick(_ sender: Any) {
+        if let url = URL(string: self.article!.articleUrl!) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func loadNewsImage(_ urlString: String) {
+           // URL comes from API response; definitely needs some safety checks
+           if let urlStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+               if let url = URL(string: urlStr) {
+                   let dataTask = URLSession.shared.dataTask(with: url,
+                   completionHandler: {(data, response, error) -> Void in
+                       if let imageData = data {
+                        self.articleImageView.image = UIImage(data: imageData)
+                       }
+                   })
+                   dataTask.resume()
+               }
+           }
+      }
     
 
     /*
