@@ -7,37 +7,81 @@
 //
 
 import UIKit
+import CoreData
 
-var topicItems = [TopicItem]()
+
+var topicItems = [(NewsTopicModel, Int)]()
 
 class MainTableViewController: UITableViewController {
     
     var newTopicText:String = ""
     var selectedTopicName:String! = nil
+    
+    var managedObjectContext: NSManagedObjectContext!
+    var appDelegate: AppDelegate!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedObjectContext = appDelegate.persistentContainer.viewContext
+        
         if newTopicText != "" {
-            let topicItem = TopicItem(name: newTopicText)
-            topicItems.append(topicItem)
+            // Insert into coredata
+            addTopic(name: newTopicText)
+            
+            // Update topic array
+            updateTopicArray()
+            
+            // Clear new topic text
             newTopicText = ""
             tableView.reloadData()
         }
-        else if newTopicText == "NONE" {
-            print("Do nothing lol")
-        }
         else {
-            initializeFoodItems()
+            initialize()
         }
-        
-        navigationItem.hidesBackButton = true
-        tableView.rowHeight = 58
     }
     
-    func initializeFoodItems() {
-        // Do something with core data here
+    // Clear the food array and update the foods based on what's in coredata
+       func updateTopicArray() {
+           topicItems.removeAll()
+           let updatedTopics = getTopic() as! [NewsTopicModel]
+           var index = 0
+           for topic in updatedTopics {
+               topicItems.append((topic, index))
+               index = index + 1
+           }
+       }
+       
+       func initialize() {
+           // self.foods.append((pasta, foods.count))
+           navigationItem.hidesBackButton = true
+           tableView.rowHeight = 58
+           updateTopicArray()
+           tableView.reloadData()
+       }
+    
+    func removeTopic(_ topic: NewsTopicModel) {
+        managedObjectContext.delete(topic)
+        appDelegate.saveContext()
+    }
+
+    func addTopic(name: String) {
+        let topic = NSEntityDescription.insertNewObject(forEntityName: "NewsTopicModel", into: self.managedObjectContext)
+        topic.setValue(name, forKey: "name")
+        appDelegate.saveContext() // In AppDelegate.swift
+    }
+
+    func getTopic() -> [NSManagedObject] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "NewsTopicModel")
+        var topic: [NSManagedObject] = []
+        do {
+            topic = try self.managedObjectContext.fetch(fetchRequest)
+        } catch {
+            print("getTopic error: \(error)")
+        }
+        return topic
     }
 
     // MARK: - Table view data source
@@ -54,10 +98,10 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicTableViewCell", for: indexPath) as! TopicTableViewCell
+        let indexRow = indexPath.row
 
         // Configure the cell...
-        let topicItem = topicItems[indexPath.row]
-        cell.cellText?.text = topicItem.name
+        cell.cellText.text = topicItems[indexRow].0.name
 
         return cell
     }
@@ -71,8 +115,12 @@ class MainTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let row = indexPath.row
             // Delete the row from the data source
-            topicItems.remove(at: indexPath.row)
+            let topic = topicItems[row]
+            topicItems.remove(at: row)
+            self.removeTopic(topic.0)
+            self.updateTopicArray()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
