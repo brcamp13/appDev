@@ -23,6 +23,7 @@
 		7330EA51245F7B21001341A9 /* NewsArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */; };
 		73575040242A5FAC00BA7044 /* FoodMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7357503F242A5FAC00BA7044 /* FoodMapViewController.swift */; };
 		737923AD245FC52400F6BC8D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737923AC245FC52400F6BC8D /* Article.swift */; };
+		7392EBBE2461046500BD4C56 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */; };
 		73B7D7D824293E6000ABC894 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesTableViewController.swift; sourceTree = "<group>"; };
 		7357503F242A5FAC00BA7044 /* FoodMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMapViewController.swift; sourceTree = "<group>"; };
 		737923AC245FC52400F6BC8D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				0946D0DA23F52A6400290094 /* Main.storyboard */,
 				7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */,
 				7357503F242A5FAC00BA7044 /* FoodMapViewController.swift */,
+				7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */,
 				73B7D7D724293E6000ABC894 /* AddFoodViewController.swift */,
 				0946D0DD23F52A6500290094 /* Assets.xcassets */,
 				0946D0DF23F52A6500290094 /* LaunchScreen.storyboard */,
@@ -185,6 +188,7 @@
 				7330EA51245F7B21001341A9 /* NewsArticlesTableViewController.swift in Sources */,
 				73B7D7D824293E6000ABC894 /* AddFoodViewController.swift in Sources */,
 				0946D0D723F52A6400290094 /* SceneDelegate.swift in Sources */,
+				7392EBBE2461046500BD4C56 /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
