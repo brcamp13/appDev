@@ -8,30 +8,24 @@
 
 import UIKit
 
-var foodItems = [FoodItem]()
+var topicItems = [TopicItem]()
 
 class MainTableViewController: UITableViewController {
     
-    var newFoodText:String = ""
-    var selectedFoodName:String! = nil
+    var newTopicText:String = ""
+    var selectedTopicName:String! = nil
 
-//    @IBAction func addFoodItemTapped(_ sender: UIBarButtonItem) {
-//        performSegue(withIdentifier: "secretPassage", sender: nil)
-//        let foodItem = FoodItem(name: "Food", imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
-//        foodItems.append(foodItem)
-//        tableView.reloadData()
-//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if newFoodText != "" {
-            let foodItem = FoodItem(name: newFoodText, imageFileName: "food.png", caloriesPerServing: 100, notificationScheduled: false)
-            foodItems.append(foodItem)
-            newFoodText = ""
-            print(foodItems)
+        if newTopicText != "" {
+            let topicItem = TopicItem(name: newTopicText)
+            topicItems.append(topicItem)
+            newTopicText = ""
             tableView.reloadData()
         }
-        else if newFoodText == "NONE" {
+        else if newTopicText == "NONE" {
             print("Do nothing lol")
         }
         else {
@@ -40,21 +34,10 @@ class MainTableViewController: UITableViewController {
         
         navigationItem.hidesBackButton = true
         tableView.rowHeight = 58
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func initializeFoodItems() {
-        var foodItem = FoodItem(name: "Pizza", imageFileName: "pizza.png", caloriesPerServing: 300, notificationScheduled: false)
-        foodItems.append(foodItem)
-        foodItem = FoodItem(name: "Spaghetti", imageFileName: "spaghetti.png", caloriesPerServing: 200, notificationScheduled: false)
-        foodItems.append(foodItem)
-        foodItem = FoodItem(name: "Ice Cream", imageFileName: "icecream.png", caloriesPerServing: 500, notificationScheduled: false)
-        foodItems.append(foodItem)
+        // Do something with core data here
     }
 
     // MARK: - Table view data source
@@ -66,17 +49,15 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foodItems.count
+        return topicItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "topicTableViewCell", for: indexPath) as! TopicTableViewCell
 
         // Configure the cell...
-        let foodItem = foodItems[indexPath.row]
-        cell.foodImageView?.image = UIImage(named: foodItem.imageFileName)
-        cell.foodNameLabel?.text = foodItem.name
-        cell.caloriesLabel?.text = "\(foodItem.caloriesPerServing) cals"
+        let topicItem = topicItems[indexPath.row]
+        cell.cellText?.text = topicItem.name
 
         return cell
     }
@@ -91,91 +72,23 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            foodItems.remove(at: indexPath.row)
+            topicItems.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! FoodCell
-        
-        // Check if notifications are enabled
-//        let center = UNUserNotificationCenter.current()
-//        center.getNotificationSettings(completionHandler: { (settings) in
-//            if settings.alertSetting == .enabled {
-//                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-//            } else {
-//                print("Nothing is supposed to happen here lol")
-//                self.displaySchedulingAlert(cell: cell, indexPath: indexPath)
-//            }
-//        })
-        
-        self.selectedFoodName = cell.foodNameLabel.text!
+        let cell = tableView.cellForRow(at: indexPath) as! TopicTableViewCell
+        self.selectedTopicName = cell.cellText.text!
         performSegue(withIdentifier: "TopicTableToArticles", sender: nil)
         
-        // If yes, then generate an alert asking the user if they would like to schedule a notification
-        // Title: "Food Notification", message: Do you want to schedule a notification for <food item> with yes or no as choices
-        // If no, nothing happens. If yes, item becomes red, notification scheduled for 5 seconds from now
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "TopicTableToArticles") {
             let articlesVC = segue.destination as! NewsArticlesTableViewController
-            articlesVC.topicName = selectedFoodName
+            articlesVC.topicName = selectedTopicName
         }
-    }
-    
-    func displaySchedulingAlert(cell: FoodCell, indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            let notificationAlert = UIAlertController(title: "Food Notification", message: "Do you want to schedule a notification for the food " + cell.foodNameLabel.text!, preferredStyle: .alert)
-            
-            notificationAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-                cell.foodNameLabel.textColor = UIColor.red
-                self.scheduleNotification(cell: cell, indexPath: indexPath)
-            }))
-            
-            notificationAlert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
-                print("Do nothing lol")
-            }))
-            
-            self.present(notificationAlert, animated: true, completion: nil)
-        }
-    }
-    
-    func scheduleNotification(cell: FoodCell, indexPath: IndexPath) {
-        let content = UNMutableNotificationContent()
-        content.title = "Food Notification"
-        content.body = "Time to eat the food"
-        content.userInfo["foodID"] = foodItems[indexPath.row].id
-        // Configure trigger for 5 seconds from now
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0,
-        repeats: false)
-        // Create request
-        let request = UNNotificationRequest(identifier: "NowPlusFive",
-        content: content, trigger: trigger)
-        // Schedule request
-        let center = UNUserNotificationCenter.current()
-        center.add(request, withCompletionHandler: { (error) in
-            if let err = error {
-                print(err.localizedDescription)
-            }
-        })
-    }
-    
-    func handleNotification(response: UNNotificationResponse) {
-        let foodId = response.notification.request.content.userInfo["userId"] as! String
-        
-        let index = foodItems.firstIndex(where: { (item) -> Bool in
-            item.id == foodId
-        })
-        
-        // Access the cell and change its text color to black. 
-        let indexPath = IndexPath(row: index!, section: 1)
-        let cell = tableView.cellForRow(at: indexPath) as! FoodCell
-        cell.foodNameLabel.textColor = UIColor.black
-        
-        
-        print("received notification foodId: \(foodId)")
     }
 
     /*

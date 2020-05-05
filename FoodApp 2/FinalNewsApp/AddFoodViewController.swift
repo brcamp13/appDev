@@ -25,11 +25,11 @@ class AddFoodViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SaveSegue") {
             let secondVC = segue.destination as! MainTableViewController
-            secondVC.newFoodText = AddFoodTextField.text!
+            secondVC.newTopicText = AddFoodTextField.text!
         }
         else if (segue.identifier == "CancelSegue") {
             let secondVC = segue.destination as! MainTableViewController
-            secondVC.newFoodText = "NONE"
+            secondVC.newTopicText = "NONE"
         }
     }
     

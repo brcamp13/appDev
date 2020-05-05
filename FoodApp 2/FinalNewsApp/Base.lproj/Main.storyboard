@@ -16,47 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="58" id="RXE-8V-RDJ" customClass="FoodCell" customModule="FinalNewsApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topicTableViewCell" rowHeight="58" id="RXE-8V-RDJ" customClass="TopicTableViewCell" customModule="FinalNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXE-8V-RDJ" id="8FK-eg-1cw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cxM-rP-gfU">
-                                            <rect key="frame" x="20" y="4" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="jUZ-6Z-be3"/>
-                                                <constraint firstAttribute="height" constant="50" id="yaG-l6-JFg"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dar-ci-w2o">
-                                            <rect key="frame" x="78" y="18.5" width="88.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 cals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWs-h1-Ud8">
-                                            <rect key="frame" x="292.5" y="18.5" width="66.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dar-ci-w2o">
+                                            <rect key="frame" x="142" y="18.5" width="91" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cxM-rP-gfU" firstAttribute="centerY" secondItem="8FK-eg-1cw" secondAttribute="centerY" id="3qm-gP-43i"/>
-                                        <constraint firstItem="fWs-h1-Ud8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dar-ci-w2o" secondAttribute="trailing" constant="8" symbolic="YES" id="5MI-ke-C8G"/>
                                         <constraint firstItem="dar-ci-w2o" firstAttribute="centerY" secondItem="8FK-eg-1cw" secondAttribute="centerY" id="5h9-1X-kqV"/>
-                                        <constraint firstItem="fWs-h1-Ud8" firstAttribute="trailing" secondItem="8FK-eg-1cw" secondAttribute="trailingMargin" id="BRF-BP-kDO"/>
-                                        <constraint firstItem="cxM-rP-gfU" firstAttribute="leading" secondItem="8FK-eg-1cw" secondAttribute="leading" constant="20" symbolic="YES" id="KmU-RE-6yh"/>
-                                        <constraint firstItem="dar-ci-w2o" firstAttribute="leading" secondItem="cxM-rP-gfU" secondAttribute="trailing" constant="8" id="SPE-bJ-Vf8"/>
-                                        <constraint firstItem="fWs-h1-Ud8" firstAttribute="centerY" secondItem="8FK-eg-1cw" secondAttribute="centerY" id="dBM-NE-nUW"/>
+                                        <constraint firstItem="dar-ci-w2o" firstAttribute="centerX" secondItem="8FK-eg-1cw" secondAttribute="centerX" id="jc0-gz-aFT"/>
+                                        <constraint firstItem="dar-ci-w2o" firstAttribute="centerY" secondItem="8FK-eg-1cw" secondAttribute="centerY" id="kgk-Yj-Hlj"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="caloriesLabel" destination="fWs-h1-Ud8" id="kvg-Fl-MlT"/>
-                                    <outlet property="foodImageView" destination="cxM-rP-gfU" id="Hwk-VF-4a1"/>
-                                    <outlet property="foodNameLabel" destination="dar-ci-w2o" id="rfv-kv-T78"/>
+                                    <outlet property="cellText" destination="dar-ci-w2o" id="q1B-4q-pPc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
