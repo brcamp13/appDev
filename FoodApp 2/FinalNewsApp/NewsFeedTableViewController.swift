@@ -19,9 +19,12 @@ class NewsFeedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedArticles.removeAll()
         self.getAllTopicArticles()
-        self.sortArticlesByDescendingDate()
-        print(feedArticles)
+        self.tableView.reloadData()
+        self.tableView.reloadData()
+        self.tableView.reloadData()
+        self.tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,18 +34,16 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     func getAllTopicArticles() {
-        for item in topicItems {
-            self.topicName = item.0.name
-            
-            self.newsURLString = "http://newsapi.org/v2/everything?" + "q=" + self.topicName + "&" + "from=2020-04-30&" + "sortBy=popularity&" + "apiKey=" + self.apiKey
-            
-            self.getArticles()
+        
+        // Do a single API call rather than a bunch. More efficient, don't have to deal with async stuff
+        var topics = [String]()
+        for topic in topicItems {
+            topics.append(topic.0.name!)
         }
-        tableView.reloadData()
-    }
-    
-    func sortArticlesByDescendingDate() {
-        feedArticles.sort(by: { $0.0.publishedAt!.compare($1.0.publishedAt!) == .orderedDescending })
+        let joinedTopics = topics.joined(separator: " OR ")
+        
+        self.newsURLString = "http://newsapi.org/v2/everything?" + "q=" + joinedTopics + "&" + "from=2020-04-30&" + "sortBy=popularity&" + "apiKey=" + self.apiKey
+            self.getArticles()
     }
     
     func getArticles() {
@@ -98,7 +99,7 @@ class NewsFeedTableViewController: UITableViewController {
         
         for item in articleArray {
             let article = Article(author: item["author"] as? String ?? "Null author", title: item["title"] as? String ?? "Null title", imageUrl: item["urlToImage"] as? String ?? "https://lh3.googleusercontent.com/proxy/ta8LgzcUCtO9utHsGF05HOIDAIyeAlAT4AGXDRVJnZpIvidqT4fYDpyVrvwCQpe35kp7uNbBLd53uDFzvKmQtHsUXXA4_iNXJC4W2rIs5-TO_R5NlTEK5w", articleUrl: item["url"] as? String ?? "https://www.google.com/", publishedAt: item["publishedAt"] as? Date ?? Date())
-            feedArticles.append((article, self.topicName))
+            feedArticles.append((article, "Feed"))
         }
         
         DispatchQueue.main.async {
