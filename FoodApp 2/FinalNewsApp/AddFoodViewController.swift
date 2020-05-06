@@ -5,6 +5,7 @@
 //  Created by Brandon Campbell on 3/23/20.
 //  Copyright © 2020 Washington State University. All rights reserved.
 //
+// View controller for adding topic. Used from food app hence the name "AddFoodViewController"
 
 import UIKit
 
@@ -39,16 +40,4 @@ class AddFoodViewController: UIViewController {
         // Do any additional setup after loading the view.
         AddFoodTextField.text = ""
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

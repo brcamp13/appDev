@@ -10,47 +10,38 @@
         <!--News Feed-->
         <scene sceneID="dRU-ZC-E3s">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6FQ-Ie-kDy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="JVE-av-AS1" customClass="NewsFeedTableViewController" customModule="FinalNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IIi-kY-fR6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedArticleTableViewCell" rowHeight="63" id="KSl-92-8Gm" customClass="FeedArticleTableViewCell" customModule="FinalNewsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedArticleTableViewCell" rowHeight="94" id="KSl-92-8Gm" customClass="FeedArticleTableViewCell" customModule="FinalNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KSl-92-8Gm" id="n9M-5l-rD7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-6L-kgb">
-                                            <rect key="frame" x="16" y="27.5" width="41.5" height="8.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-F7-JpR">
-                                            <rect key="frame" x="81" y="21" width="278" height="21"/>
+                                            <rect key="frame" x="16" y="40" width="343" height="14.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="278" id="QZh-Ow-bPs"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dq8-6L-kgb" firstAttribute="centerY" secondItem="n9M-5l-rD7" secondAttribute="centerY" id="80H-52-odi"/>
-                                        <constraint firstItem="dq8-6L-kgb" firstAttribute="leading" secondItem="n9M-5l-rD7" secondAttribute="leadingMargin" id="ETE-rE-Icy"/>
-                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="leading" secondItem="dq8-6L-kgb" secondAttribute="trailing" constant="23.5" id="R3k-K7-TyW"/>
+                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="centerY" secondItem="n9M-5l-rD7" secondAttribute="centerY" id="Rmc-ic-rt7"/>
                                         <constraint firstItem="Jow-F7-JpR" firstAttribute="centerY" secondItem="n9M-5l-rD7" secondAttribute="centerY" id="cdo-4b-5WG"/>
                                         <constraint firstItem="Jow-F7-JpR" firstAttribute="trailing" secondItem="n9M-5l-rD7" secondAttribute="trailingMargin" id="nlC-kG-F49"/>
+                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="centerX" secondItem="n9M-5l-rD7" secondAttribute="centerX" id="vgq-jz-8Sl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleTitleLabel" destination="Jow-F7-JpR" id="9nc-jX-1T4"/>
-                                    <outlet property="topicLabel" destination="dq8-6L-kgb" id="6U4-Q5-evv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,6 +55,7 @@
                         <segue destination="elD-0H-FA7" kind="show" identifier="ShowArticleDetailsFromFeed" id="cgo-YF-byi"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FQ-Ie-kDy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="525.60000000000002" y="-689.5052473763119"/>
         </scene>

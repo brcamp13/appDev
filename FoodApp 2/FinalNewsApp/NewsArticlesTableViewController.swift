@@ -5,6 +5,8 @@
 //  Created by Brandon Campbell on 5/3/20.
 //  Copyright © 2020 Washington State University. All rights reserved.
 //
+//
+// Tableview controller for the single topic articles list (when you click a topic from the main page).
 
 import UIKit
 
@@ -16,11 +18,12 @@ class NewsArticlesTableViewController: UITableViewController {
     var topicName:String! = nil
     var newsURLString:String! = nil
     var apiKey = "7378f52d4d104cc2bbd1c2c916ee3e1a"
-    var image:UIImage! = nil
     var selectedArticle:Article! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepate the API url.
         self.newsURLString = "http://newsapi.org/v2/everything?" +
             "q=" +
             self.topicName +
@@ -30,13 +33,12 @@ class NewsArticlesTableViewController: UITableViewController {
             "apiKey=" +
             self.apiKey
         
-        print(self.newsURLString!)
+        // Get all articles, making sure to clear current articles beforehand.
         articles.removeAll()
         self.getArticles()
-
-        // Do any additional setup after loading the view.
     }
     
+    // Make the API call.
     func getArticles() {
         // May not know exactly what's in the URL, so replace special characters with % encoding
         if let urlStr = newsURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
@@ -48,6 +50,7 @@ class NewsArticlesTableViewController: UITableViewController {
         }
     }
     
+    // Handle the API response.
     func handleNewsResponse (data: Data?, response: URLResponse?, error: Error?) {
         
         // 1. Check for error in request (e.g., no network connection)
@@ -86,8 +89,7 @@ class NewsArticlesTableViewController: UITableViewController {
             return
         }
         
-        // articleArray should have all of the news articles for the topic, so go through and add them as table cells somehow
-        
+       // Add all returned articles to the global article array which will be displayed in a table on this page.
         for item in articleArray {
             let article = Article(author: item["author"] as? String ?? "Null author", title: item["title"] as? String ?? "Null title", imageUrl: item["urlToImage"] as? String ?? "https://lh3.googleusercontent.com/proxy/ta8LgzcUCtO9utHsGF05HOIDAIyeAlAT4AGXDRVJnZpIvidqT4fYDpyVrvwCQpe35kp7uNbBLd53uDFzvKmQtHsUXXA4_iNXJC4W2rIs5-TO_R5NlTEK5w", articleUrl: item["url"] as? String ?? "https://www.google.com/", publishedAt: item["publishedAt"] as? Date ?? Date())
             articles.append(article)
@@ -99,56 +101,41 @@ class NewsArticlesTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
             return 1
         }
 
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return the number of rows
-            return articles.count
-        }
-
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newsArticleCell", for: indexPath) as! NewsArticleCell
-
-            // Configure the cell...
-            let article = articles[indexPath.row]
-            cell.articleLabel?.text = article.title
-
-            return cell
-        }
-
-        // Override to support conditional editing of the table view.
-        override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-            // Return false if you do not want the specified item to be editable.
-            return true
-        }
-        
-        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            // Do the segue to the article detail page
-            self.selectedArticle = articles[indexPath.row]
-            performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
-
-     
-        }
-        
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if (segue.identifier == "ShowArticleDetails") {
-                let articlesVC = segue.destination as! ArticleDetailViewController
-                articlesVC.article = self.selectedArticle
-            }
-        }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
     }
-    */
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsArticleCell", for: indexPath) as! NewsArticleCell
+
+        // Configure the cell...
+        let article = articles[indexPath.row]
+        cell.articleLabel?.text = article.title
+
+        return cell
+    }
+
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Do the segue to the article detail page
+        self.selectedArticle = articles[indexPath.row]
+        performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
+ 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowArticleDetails") {
+            let articlesVC = segue.destination as! ArticleDetailViewController
+            articlesVC.article = self.selectedArticle
+        }
+    }
 }

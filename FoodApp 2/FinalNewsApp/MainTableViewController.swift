@@ -2,8 +2,7 @@
 //  MainTableViewController.swift
 //  FoodApp
 //
-//  Created by Larry Holder on 2/12/20.
-//  Copyright © 2020 Washington State University. All rights reserved.
+//  Created by Brandon Campbell on 5/6/20.
 //
 
 import UIKit
@@ -44,12 +43,12 @@ class MainTableViewController: UITableViewController {
         }
     }
     
-    
+    // News feed button click handler. Poorly named.
     @IBAction func barButtonClick(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "showNewsFeed", sender: nil)
     }
     
-    // Clear the food array and update the foods based on what's in coredata
+    // Clear the topic array and update the topics based on what's in coredata
        func updateTopicArray() {
            topicItems.removeAll()
            let updatedTopics = getTopic() as! [NewsTopicModel]
@@ -60,25 +59,28 @@ class MainTableViewController: UITableViewController {
            }
        }
        
+    // Initialize the topic table view.
        func initialize() {
-           // self.foods.append((pasta, foods.count))
            navigationItem.hidesBackButton = true
            tableView.rowHeight = 58
            updateTopicArray()
            tableView.reloadData()
        }
     
+    // Remove a topic from core data.
     func removeTopic(_ topic: NewsTopicModel) {
         managedObjectContext.delete(topic)
         appDelegate.saveContext()
     }
 
+    // Add a topic to core data.
     func addTopic(name: String) {
         let topic = NSEntityDescription.insertNewObject(forEntityName: "NewsTopicModel", into: self.managedObjectContext)
         topic.setValue(name, forKey: "name")
         appDelegate.saveContext() // In AppDelegate.swift
     }
 
+    // Get a topic from core data
     func getTopic() -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "NewsTopicModel")
         var topic: [NSManagedObject] = []
@@ -144,30 +146,4 @@ class MainTableViewController: UITableViewController {
             articlesVC.topicName = selectedTopicName
         }
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
