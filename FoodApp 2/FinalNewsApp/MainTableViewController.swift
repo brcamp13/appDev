@@ -20,6 +20,7 @@ class MainTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
 
+    @IBOutlet weak var feedBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,11 @@ class MainTableViewController: UITableViewController {
         else {
             initialize()
         }
+    }
+    
+    
+    @IBAction func barButtonClick(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showNewsFeed", sender: nil)
     }
     
     // Clear the food array and update the foods based on what's in coredata

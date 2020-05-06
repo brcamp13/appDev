@@ -89,7 +89,7 @@ class NewsArticlesTableViewController: UITableViewController {
         // articleArray should have all of the news articles for the topic, so go through and add them as table cells somehow
         
         for item in articleArray {
-            let article = Article(author: item["author"] as? String ?? "Null author", title: item["title"] as? String ?? "Null title", imageUrl: item["urlToImage"] as? String ?? "https://lh3.googleusercontent.com/proxy/ta8LgzcUCtO9utHsGF05HOIDAIyeAlAT4AGXDRVJnZpIvidqT4fYDpyVrvwCQpe35kp7uNbBLd53uDFzvKmQtHsUXXA4_iNXJC4W2rIs5-TO_R5NlTEK5w", articleUrl: item["url"] as? String ?? "https://www.google.com/")
+            let article = Article(author: item["author"] as? String ?? "Null author", title: item["title"] as? String ?? "Null title", imageUrl: item["urlToImage"] as? String ?? "https://lh3.googleusercontent.com/proxy/ta8LgzcUCtO9utHsGF05HOIDAIyeAlAT4AGXDRVJnZpIvidqT4fYDpyVrvwCQpe35kp7uNbBLd53uDFzvKmQtHsUXXA4_iNXJC4W2rIs5-TO_R5NlTEK5w", articleUrl: item["url"] as? String ?? "https://www.google.com/", publishedAt: item["publishedAt"] as? Date ?? Date())
             articles.append(article)
         }
         

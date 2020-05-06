@@ -21,6 +21,8 @@
 		732FDC622462365A00DD6219 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 732FDC612462365A00DD6219 /* Settings.bundle */; };
 		7330EA51245F7B21001341A9 /* NewsArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */; };
 		737923AD245FC52400F6BC8D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737923AC245FC52400F6BC8D /* Article.swift */; };
+		7380D78324624771009095A4 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7380D78224624771009095A4 /* NewsFeedTableViewController.swift */; };
+		7380D78524625DBF009095A4 /* FeedArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7380D78424625DBF009095A4 /* FeedArticleTableViewCell.swift */; };
 		7392EBBE2461046500BD4C56 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */; };
 		7392EBC02461229700BD4C56 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7392EBBF2461229700BD4C56 /* TopicTableViewCell.swift */; };
 		7392EBC2246123E900BD4C56 /* TopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7392EBC1246123E900BD4C56 /* TopicItem.swift */; };
@@ -45,6 +47,8 @@
 		732FDC612462365A00DD6219 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesTableViewController.swift; sourceTree = "<group>"; };
 		737923AC245FC52400F6BC8D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7380D78224624771009095A4 /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
+		7380D78424625DBF009095A4 /* FeedArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedArticleTableViewCell.swift; sourceTree = "<group>"; };
 		7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		7392EBBF2461229700BD4C56 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		7392EBC1246123E900BD4C56 /* TopicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItem.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				0946D0D423F52A6400290094 /* AppDelegate.swift */,
 				0946D0D623F52A6400290094 /* SceneDelegate.swift */,
 				0946D0E823F52AE100290094 /* MainTableViewController.swift */,
+				7380D78224624771009095A4 /* NewsFeedTableViewController.swift */,
+				7380D78424625DBF009095A4 /* FeedArticleTableViewCell.swift */,
 				732FDC612462365A00DD6219 /* Settings.bundle */,
 				737923AC245FC52400F6BC8D /* Article.swift */,
 				7392EBC1246123E900BD4C56 /* TopicItem.swift */,
@@ -186,9 +192,11 @@
 				7392EBC02461229700BD4C56 /* TopicTableViewCell.swift in Sources */,
 				7329624D245A97730067BD24 /* NewsArticleCell.swift in Sources */,
 				0946D0D523F52A6400290094 /* AppDelegate.swift in Sources */,
+				7380D78324624771009095A4 /* NewsFeedTableViewController.swift in Sources */,
 				737923AD245FC52400F6BC8D /* Article.swift in Sources */,
 				0946D0E923F52AE100290094 /* MainTableViewController.swift in Sources */,
 				7330EA51245F7B21001341A9 /* NewsArticlesTableViewController.swift in Sources */,
+				7380D78524625DBF009095A4 /* FeedArticleTableViewCell.swift in Sources */,
 				7392EBC2246123E900BD4C56 /* TopicItem.swift in Sources */,
 				73B7D7D824293E6000ABC894 /* AddFoodViewController.swift in Sources */,
 				0946D0D723F52A6400290094 /* SceneDelegate.swift in Sources */,

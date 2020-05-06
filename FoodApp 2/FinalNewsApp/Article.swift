@@ -14,12 +14,14 @@ class Article {
     var imageUrl: String?
     var articleUrl: String?
     var id: String?
+    var publishedAt: Date?
 
-    init(author: String, title: String, imageUrl: String, articleUrl: String) {
+    init(author: String, title: String, imageUrl: String, articleUrl: String, publishedAt: Date) {
         self.author = author
         self.title = title
         self.imageUrl = imageUrl
         self.articleUrl = articleUrl
         self.id = UUID().uuidString
+        self.publishedAt = publishedAt
     }
 }

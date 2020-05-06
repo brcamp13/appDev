@@ -7,6 +7,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--News Feed-->
+        <scene sceneID="dRU-ZC-E3s">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FQ-Ie-kDy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="JVE-av-AS1" customClass="NewsFeedTableViewController" customModule="FinalNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IIi-kY-fR6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedArticleTableViewCell" rowHeight="63" id="KSl-92-8Gm" customClass="FeedArticleTableViewCell" customModule="FinalNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KSl-92-8Gm" id="n9M-5l-rD7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-6L-kgb">
+                                            <rect key="frame" x="16" y="27.5" width="41.5" height="8.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-F7-JpR">
+                                            <rect key="frame" x="81" y="21" width="278" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="278" id="QZh-Ow-bPs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dq8-6L-kgb" firstAttribute="centerY" secondItem="n9M-5l-rD7" secondAttribute="centerY" id="80H-52-odi"/>
+                                        <constraint firstItem="dq8-6L-kgb" firstAttribute="leading" secondItem="n9M-5l-rD7" secondAttribute="leadingMargin" id="ETE-rE-Icy"/>
+                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="leading" secondItem="dq8-6L-kgb" secondAttribute="trailing" constant="23.5" id="R3k-K7-TyW"/>
+                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="centerY" secondItem="n9M-5l-rD7" secondAttribute="centerY" id="cdo-4b-5WG"/>
+                                        <constraint firstItem="Jow-F7-JpR" firstAttribute="trailing" secondItem="n9M-5l-rD7" secondAttribute="trailingMargin" id="nlC-kG-F49"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleTitleLabel" destination="Jow-F7-JpR" id="9nc-jX-1T4"/>
+                                    <outlet property="topicLabel" destination="dq8-6L-kgb" id="6U4-Q5-evv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JVE-av-AS1" id="rxV-La-OLC"/>
+                            <outlet property="delegate" destination="JVE-av-AS1" id="oNL-RW-p0Q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="News Feed" prompt="News App" id="yM7-ub-22q"/>
+                    <connections>
+                        <segue destination="elD-0H-FA7" kind="show" identifier="ShowArticleDetailsFromFeed" id="cgo-YF-byi"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="525.60000000000002" y="-689.5052473763119"/>
+        </scene>
         <!--Topics-->
         <scene sceneID="Dru-wh-IE1">
             <objects>
@@ -47,15 +107,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Topics" prompt="News App" id="PWQ-kI-oVH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H78-oS-anH">
-                            <connections>
-                                <action selector="addFoodItemTapped:" destination="ZG4-o7-GMY" id="QUq-mv-hPR"/>
-                                <segue destination="DcR-hC-PW4" kind="show" id="Jxp-Ho-TRO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="H78-oS-anH">
+                                <connections>
+                                    <action selector="addFoodItemTapped:" destination="ZG4-o7-GMY" id="QUq-mv-hPR"/>
+                                    <segue destination="DcR-hC-PW4" kind="show" id="Jxp-Ho-TRO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Feed" id="ihR-fS-eJg">
+                                <connections>
+                                    <action selector="barButtonClick:" destination="ZG4-o7-GMY" id="aKF-9d-riT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="feedBarButton" destination="ihR-fS-eJg" id="IQa-vR-ePo"/>
                         <segue destination="oiE-IV-6et" kind="show" identifier="TopicTableToArticles" id="rKn-2a-gZc"/>
+                        <segue destination="JVE-av-AS1" kind="show" identifier="showNewsFeed" id="ics-xB-4cC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTV-WH-hmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -249,6 +318,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cgo-YF-byi"/>
         <segue reference="Ig6-AF-8pW"/>
     </inferredMetricsTieBreakers>
 </document>
