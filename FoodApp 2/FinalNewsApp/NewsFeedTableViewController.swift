@@ -99,6 +99,8 @@ class NewsFeedTableViewController: UITableViewController {
         }
         
         DispatchQueue.main.async {
+            let articleCount = UserDefaults.standard.string(forKey: "articleCount")
+            feedArticles = Array(feedArticles.prefix(Int(articleCount!)!))
             self.tableView.reloadData()
         }
     }
