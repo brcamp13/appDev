@@ -18,6 +18,7 @@
 		0946D0F323F5352700290094 /* icecream.png in Resources */ = {isa = PBXBuildFile; fileRef = 0946D0F223F5352700290094 /* icecream.png */; };
 		0946D0F523F5354800290094 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 0946D0F423F5354800290094 /* food.png */; };
 		7329624D245A97730067BD24 /* NewsArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329624C245A97730067BD24 /* NewsArticleCell.swift */; };
+		732FDC622462365A00DD6219 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 732FDC612462365A00DD6219 /* Settings.bundle */; };
 		7330EA51245F7B21001341A9 /* NewsArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */; };
 		737923AD245FC52400F6BC8D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737923AC245FC52400F6BC8D /* Article.swift */; };
 		7392EBBE2461046500BD4C56 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */; };
@@ -41,6 +42,7 @@
 		0946D0F223F5352700290094 /* icecream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecream.png; sourceTree = "<group>"; };
 		0946D0F423F5354800290094 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		7329624C245A97730067BD24 /* NewsArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleCell.swift; sourceTree = "<group>"; };
+		732FDC612462365A00DD6219 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7330EA50245F7B21001341A9 /* NewsArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesTableViewController.swift; sourceTree = "<group>"; };
 		737923AC245FC52400F6BC8D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		7392EBBD2461046500BD4C56 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				0946D0D423F52A6400290094 /* AppDelegate.swift */,
 				0946D0D623F52A6400290094 /* SceneDelegate.swift */,
 				0946D0E823F52AE100290094 /* MainTableViewController.swift */,
+				732FDC612462365A00DD6219 /* Settings.bundle */,
 				737923AC245FC52400F6BC8D /* Article.swift */,
 				7392EBC1246123E900BD4C56 /* TopicItem.swift */,
 				0946D0DA23F52A6400290094 /* Main.storyboard */,
@@ -161,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732FDC622462365A00DD6219 /* Settings.bundle in Resources */,
 				0946D0F123F5352000290094 /* spaghetti.png in Resources */,
 				0946D0E123F52A6500290094 /* LaunchScreen.storyboard in Resources */,
 				0946D0DE23F52A6500290094 /* Assets.xcassets in Resources */,
